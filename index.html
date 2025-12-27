@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radio Carousel</title>
+
+  <!-- Splide CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css"
+  />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>📻</h1>
+
+  <div id="radio-splide" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list" id="stationList"></ul>
+    </div>
+  </div>
+
+  <!-- Single shared audio element -->
+  <audio id="audioPlayer" playsinline></audio>
+
+  <!-- Splide JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+
+  <!-- HLS.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <!-- Your JS -->
+  <script src="script.js"></script>
+</body>
+</html>
