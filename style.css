@@ -38,10 +38,19 @@ h1 {
 .splide__slide.is-active {
   transform: scale(1);
   opacity: 1;
-  box-shadow: 0 0 30px rgba(0, 255, 213, 0.8);
 }
 
 /* Optional: slight tilt for non-active slides */
 .splide__slide:not(.is-active) {
   transform: scale(0.75);
+}
+
+/* Active & playing (green) */
+.splide__slide.is-active.playing {
+  box-shadow: 0 0 30px rgba(0, 255, 120, 0.9);
+}
+
+/* Active & paused (red) */
+.splide__slide.is-active.paused {
+  box-shadow: 0 0 30px rgba(255, 80, 80, 0.9);
 }
