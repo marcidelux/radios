@@ -1,0 +1,34 @@
+[
+  {
+    "name": "NTS Radio 1",
+    "image": "pics/nts-1.png",
+    "stream": "https://stream-relay-geo.ntslive.net/stream"
+  },
+  {
+    "name": "NTS Radio 2",
+    "image": "pics/nts-2.png",
+    "stream": "https://stream-relay-geo.ntslive.net/stream2"
+  },
+  {
+    "name": "BBC Radio 4",
+    "image": "pics/bbc4.png",
+    "stream": "https://as-hls-ww-live.akamaized.net/pool_55057080/live/ww/bbc_radio_fourfm/bbc_radio_fourfm.isml/bbc_radio_fourfm-audio%3d96000.norewind.m3u8"
+  },
+  {
+    "name": "France Culture",
+    "image": "pics/franceculture.png",
+    "stream": "https://icecast.radiofrance.fr/franceculture-midfi.mp3"
+  },
+  {
+    "name": "Klub",
+    "image": "pics/klub.png",
+    "stream": "https://stream.klubradio.hu:8443"
+  },
+  {
+    "name": "Tilos",
+    "image": "pics/tilos.png",
+    "stream": "https://stream.tilos.hu/analog"
+  }
+]
+
+

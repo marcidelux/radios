@@ -1,34 +1,128 @@
-[
-  {
-    "name": "NTS Radio 1",
-    "image": "pics/nts-1.png",
-    "stream": "https://stream-relay-geo.ntslive.net/stream"
+{
+  "meta": {
+    "version": "1.0",
+    "updated": "2026-01-01"
   },
-  {
-    "name": "NTS Radio 2",
-    "image": "pics/nts-2.png",
-    "stream": "https://stream-relay-geo.ntslive.net/stream2"
-  },
-  {
-    "name": "BBC Radio 4",
-    "image": "pics/bbc4.png",
-    "stream": "https://as-hls-ww-live.akamaized.net/pool_55057080/live/ww/bbc_radio_fourfm/bbc_radio_fourfm.isml/bbc_radio_fourfm-audio%3d96000.norewind.m3u8"
-  },
-  {
-    "name": "France Culture",
-    "image": "pics/franceculture.png",
-    "stream": "https://icecast.radiofrance.fr/franceculture-midfi.mp3"
-  },
-  {
-    "name": "Klub",
-    "image": "pics/klub.png",
-    "stream": "https://stream.klubradio.hu:8443"
-  },
-  {
-    "name": "Tilos",
-    "image": "pics/tilos.png",
-    "stream": "https://stream.tilos.hu/analog"
-  }
-]
 
+  "countries": {
+    "HU": {
+      "name": "Hungary",
+      "flag": "🇭🇺"
+    },
+    "UK": {
+      "name": "United Kingdom",
+      "flag": "🇬🇧"
+    },
+    "FR": {
+      "name": "France",
+      "flag": "🇫🇷"
+    }
+  },
 
+  "genres": {
+    "Music": {
+      "label": "Music"
+    },
+    "Electronic": {
+      "label": "Electronic"
+    },
+    "Jazz": {
+      "label": "Jazz"
+    },
+    "Alternative": {
+      "label": "Alternative"
+    },
+    "Talk": {
+      "label": "Talk Radio"
+    },
+    "News": {
+      "label": "News Radio"
+    },
+    "Comedy": {
+      "label": "Comedy"
+    },
+    "DJ": {
+      "label": "DJ"
+    },
+    "Politics": {
+      "label": "Politics"
+    }
+  },
+
+  "stations": [
+    {
+      "id": "UK_001",
+      "name": "NTS Radio 1",
+      "country": "UK",
+      "genres": [
+        "Music",
+        "Alternative",
+        "DJ"
+      ],
+      "image": "pics/UK/nts-1.png",
+      "stream": "https://stream-relay-geo.ntslive.net/stream"
+    },
+    {
+      "id": "UK_002",
+      "name": "NTS Radio 2",
+      "country": "UK",
+      "genres": [
+        "Music",
+        "Alternative",
+        "DJ"
+      ],
+      "image": "pics/UK/nts-1.png",
+      "stream": "https://stream-relay-geo.ntslive.net/stream2"
+    },
+    {
+      "id": "UK_003",
+      "name": "BBC Radio 4",
+      "country": "UK",
+      "genres": [
+        "Talk",
+        "Comedy",
+        "Music",
+        "News"
+      ],
+      "image": "pics/UK/bbc4.png",
+      "stream": "https://as-hls-ww-live.akamaized.net/pool_55057080/live/ww/bbc_radio_fourfm/bbc_radio_fourfm.isml/bbc_radio_fourfm-audio%3d96000.norewind.m3u8"
+    },
+    {
+      "id": "FR_001",
+      "name": "France Culture",
+      "country": "FR",
+      "genres": [
+        "News",
+        "Talk"
+      ],
+      "image": "pics/FR/franceculture.png",
+      "stream": "https://icecast.radiofrance.fr/franceculture-midfi.mp3"
+    },
+    {
+      "id": "HU_001",
+      "name": "Klub",
+      "country": "HU",
+      "genres": [
+        "News",
+        "Music",
+        "Politics"
+      ],
+      "image": "pics/HU/klub.png",
+      "stream": "https://stream.klubradio.hu:8443"
+    },
+    {
+      "id": "HU_002",
+      "name": "Tilos",
+      "country": "HU",
+      "genres": [
+        "Talk",
+        "Music",
+        "Alternative",
+        "DJ",
+        "Politics"
+      ],
+      "image": "pics/HU/tilos.png",
+      "stream": "https://stream.tilos.hu/analog"
+    }
+  ]
+}

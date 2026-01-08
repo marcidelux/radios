@@ -1,0 +1,31 @@
+body {
+  background: #0d0d0d;
+  color: white;
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+#favorites-table img {
+  max-height: 100px;
+  max-width: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.3);
+}

@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #0d0d0d;
-  color: white;
+  background: #312d2d;
   font-family: system-ui, sans-serif;
   text-align: center;
 }
@@ -27,7 +26,7 @@ h1 {
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.splide__slide img {
+#player .splide__slide img {
   width: min(33vw, 100vh);
   height: auto;
   border-radius: 18px;
@@ -36,13 +35,14 @@ h1 {
 }
 
 .splide__slide.is-active {
-  transform: scale(1);
+  transform: scale(0.95);
   opacity: 1;
 }
 
 /* Optional: slight tilt for non-active slides */
 .splide__slide:not(.is-active) {
   transform: scale(0.75);
+  opacity: 0.8;
 }
 
 /* Active & playing (green) */

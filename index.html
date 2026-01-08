@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radio Carousel</title>
+  <title>Radio Player</title>
 
   <!-- Splide CSS -->
   <link
@@ -11,29 +11,44 @@
     href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css"
   />
 
-  <!-- Your CSS -->
+  <!-- Player + Favorites styles -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="favorites.css" />
 </head>
 
 <body>
-  <h1>📻</h1>
 
-  <div id="radio-splide" class="splide">
-    <div class="splide__track">
-      <ul class="splide__list" id="stationList"></ul>
+  <!-- 🔝 Header -->
+  <header>
+    <h1>📻</h1>
+  </header>
+
+  <!-- 🎚 PLAYER -->
+  <section id="player">
+    <div id="radio-splide" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list" id="stationList"></ul>
+      </div>
     </div>
-  </div>
 
-  <!-- Single shared audio element -->
-  <audio id="audioPlayer" playsinline></audio>
+    <audio id="audioPlayer" playsinline></audio>
+  </section>
 
-  <!-- Splide JS -->
+  <!-- ⭐ FAVORITES -->
+  <section id="favorites">
+    <h2>Favorites</h2>
+    <div id="favorites-container">
+      <!-- table injected by favorites.js -->
+    </div>
+  </section>
+
+  <!-- Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
-
-  <!-- HLS.js -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-  <!-- Your JS -->
-  <script src="script.js"></script>
+  <!-- Components -->
+  <script type="module" src="player.js"></script>
+  <script type="module" src="favorites.js"></script>
+
 </body>
 </html>
