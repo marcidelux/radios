@@ -1,66 +1,220 @@
 // ===============================
 // GLOBAL STATE
 // ===============================
-let allStations = [];     // full list from JSON
-let favorites = [];      // full objects (GLOBAL EXPORT LATER)
 
-const STORAGE_KEY = "favorites"; // stores only station names
+let catalog = null;
+
+let allStations = [];
+let stationsById = new Map();
+
+let countries = {};
+let genres = {};
+
+let favorites = []; // full station objects (exported to player.js)
+
+const STORAGE_KEY = "favoriteStationIds";
 
 export function getFavorites() {
   return favorites;
 }
 
+// Active filter state
+let activeCountry = "";
+let activeGenres = new Set();
+
 // ===============================
 // INITIALIZATION
 // ===============================
+
 console.log("[INIT] Favorites component starting...");
 
 fetch("stations.json")
   .then(res => res.json())
-  .then(stations => {
-    console.log("[INIT] stations.json loaded:", stations.length);
+  .then(data => {
+    console.log("[INIT] stations.json loaded");
 
-    allStations = stations;
+    catalog = data;
+    allStations = data.stations;
+    countries = data.countries;
+    genres = data.genres;
 
-    const storedNames = loadFromStorage();
-    buildTable(allStations, storedNames);
+    // Build fast lookup
+    stationsById.clear();
+    allStations.forEach(st => {
+      stationsById.set(st.id, st);
+    });
+
+    // Build filter UI
+    buildCountryFilter();
+    buildGenreFilter();
+    initGenreDropdown();
+
+    // Load favorites from storage
+    const storedIds = loadFromStorage();
+
+    // Initial table = all stations
+    buildTable(allStations, storedIds);
+
+    // Build favorites list for player
     rebuildFavoritesFromTable();
 
-    logFavorites();
+    console.log("[INIT] Favorites ready");
+  })
+  .catch(err => {
+    console.error("[INIT] Failed to load stations.json", err);
   });
-
 
 // ===============================
 // STORAGE
 // ===============================
+
 function loadFromStorage() {
   const raw = localStorage.getItem(STORAGE_KEY);
-
-  if (!raw) {
-    console.log("[STORAGE] No stored favorites found");
-    return [];
-  }
+  if (!raw) return [];
 
   try {
     const parsed = JSON.parse(raw);
-    console.log("[STORAGE] Loaded favorites from localStorage:", parsed);
+    console.log("[STORAGE] Loaded favorite IDs:", parsed);
     return parsed;
-  } catch (e) {
-    console.error("[STORAGE] Failed to parse localStorage", e);
+  } catch {
+    console.warn("[STORAGE] Invalid storage format");
     return [];
   }
 }
 
-function saveToStorage(names) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(names));
-  console.log("[STORAGE] Saved favorites:", names);
+function saveToStorage(ids) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+  console.log("[STORAGE] Saved favorite IDs:", ids);
 }
 
+// ===============================
+// FILTER UI
+// ===============================
+
+function buildCountryFilter() {
+  const select = document.getElementById("filter-country");
+
+  Object.entries(countries).forEach(([code, meta]) => {
+    const option = document.createElement("option");
+    option.value = code;
+    option.textContent = meta.flag
+      ? `${meta.flag} ${meta.name}`
+      : meta.name;
+
+    select.appendChild(option);
+  });
+}
+
+function buildGenreFilter() {
+  const container = document.getElementById("filter-genres");
+
+  Object.entries(genres).forEach(([key, meta]) => {
+    const label = document.createElement("label");
+    label.style.display = "block";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = key;
+
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        activeGenres.add(key);
+      } else {
+        activeGenres.delete(key);
+      }
+      updateGenreLabel();
+    });
+
+    label.appendChild(checkbox);
+    label.append(" " + meta.label);
+
+    container.appendChild(label);
+  });
+}
+
+// ===============================
+// GENRE DROPDOWN BEHAVIOR
+// ===============================
+
+function initGenreDropdown() {
+  const genreSelect = document.getElementById("genre-select");
+  const genreLabel = document.getElementById("genre-label");
+
+  genreLabel.addEventListener("click", () => {
+    genreSelect.classList.toggle("open");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!genreSelect.contains(e.target)) {
+      genreSelect.classList.remove("open");
+    }
+  });
+
+  updateGenreLabel();
+}
+
+function updateGenreLabel() {
+  const genreLabel = document.getElementById("genre-label");
+
+  if (activeGenres.size === 0) {
+    genreLabel.textContent = "Select genres";
+  } else if (activeGenres.size === 1) {
+    genreLabel.textContent = [...activeGenres][0];
+  } else {
+    genreLabel.textContent = `${activeGenres.size} genres selected`;
+  }
+}
+
+// ===============================
+// FILTER APPLY
+// ===============================
+
+document
+  .getElementById("filter-apply")
+  .addEventListener("click", applyFilters);
+
+function applyFilters() {
+  activeCountry =
+    document.getElementById("filter-country").value || "";
+
+  const filtered = allStations.filter(station => {
+    // Country filter
+    if (activeCountry && station.country !== activeCountry) {
+      return false;
+    }
+
+    // Genre filter (OR logic)
+    if (activeGenres.size > 0) {
+      const match = station.genres.some(g =>
+        activeGenres.has(g)
+      );
+      if (!match) return false;
+    }
+
+    return true;
+  });
+
+  console.log(
+    `[FILTER] Result count: ${filtered.length}`
+  );
+
+  rebuildTable(filtered);
+}
 
 // ===============================
 // TABLE BUILDING
 // ===============================
-function buildTable(stations, storedNames) {
+
+function rebuildTable(stations) {
+  const storedIds = loadFromStorage();
+  const container = document.getElementById("favorites-container");
+
+  container.innerHTML = "";
+  buildTable(stations, storedIds);
+}
+
+function buildTable(stations, storedIds) {
   console.log("[TABLE] Building table...");
 
   const container = document.getElementById("favorites-container");
@@ -68,103 +222,79 @@ function buildTable(stations, storedNames) {
   const table = document.createElement("table");
   table.id = "favorites-table";
 
-  const thead = document.createElement("thead");
-  thead.innerHTML = `
-    <tr>
-      <th>Name</th>
-      <th>Logo</th>
-      <th>Favorite</th>
-    </tr>
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Logo</th>
+        <th>Favorite</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
   `;
-  table.appendChild(thead);
 
-  const tbody = document.createElement("tbody");
+  const tbody = table.querySelector("tbody");
 
   stations.forEach(station => {
-    const isChecked = storedNames.includes(station.name);
-
-    console.log(
-      `[TABLE] Row: ${station.name} | checked: ${isChecked}`
-    );
+    const isChecked = storedIds.includes(station.id);
 
     const row = document.createElement("tr");
-    row.dataset.stationName = station.name;
+    row.dataset.stationId = station.id;
 
     row.innerHTML = `
-      <td>${station.name}</td>
-      <td><img src="${station.image}" alt="${station.name}" /></td>
+      <td>${countries[station.country].flag} ${station.name}</td>
+      <td>
+        <img src="${station.image}" alt="${station.name}" />
+      </td>
       <td>
         <input type="checkbox" ${isChecked ? "checked" : ""} />
       </td>
     `;
 
-    const checkbox = row.querySelector("input");
-    checkbox.addEventListener("change", onCheckboxChange);
+    row
+      .querySelector("input")
+      .addEventListener("change", onCheckboxChange);
 
     tbody.appendChild(row);
   });
 
-  table.appendChild(tbody);
   container.appendChild(table);
-
-  console.log("[TABLE] Table built");
 }
-
-
-// ===============================
-// EVENT HANDLING
-// ===============================
-function onCheckboxChange(event) {
-  const row = event.target.closest("tr");
-  const stationName = row.dataset.stationName;
-  const checked = event.target.checked;
-
-  console.log(
-    `[UI] Checkbox changed: ${stationName} → ${checked}`
-  );
-
-  rebuildFavoritesFromTable();
-  logFavorites();
-}
-
 
 // ===============================
 // FAVORITES LOGIC
 // ===============================
-function rebuildFavoritesFromTable() {
-  console.log("[FAVORITES] Rebuilding from table state...");
 
-  const checkedNames = [];
+function onCheckboxChange() {
+  rebuildFavoritesFromTable();
+}
+
+function rebuildFavoritesFromTable() {
+  console.log("[FAVORITES] Rebuilding from table...");
+
+  const checkedIds = [];
   favorites = [];
 
-  document.querySelectorAll("#favorites-table tbody tr").forEach(row => {
-    const checkbox = row.querySelector("input");
-    const name = row.dataset.stationName;
+  document
+    .querySelectorAll("#favorites-table tbody tr")
+    .forEach(row => {
+      const checkbox = row.querySelector("input");
+      if (!checkbox.checked) return;
 
-    if (checkbox.checked) {
-      checkedNames.push(name);
+      const id = row.dataset.stationId;
+      checkedIds.push(id);
 
-      const station = allStations.find(s => s.name === name);
-      if (station) {
-        favorites.push(station);
-      }
-    }
-  });
+      const station = stationsById.get(id);
+      if (station) favorites.push(station);
+    });
 
-  saveToStorage(checkedNames);
+  saveToStorage(checkedIds);
 
   window.dispatchEvent(
     new CustomEvent("favorites-changed")
   );
 
   console.log(
-    `[FAVORITES] Rebuilt. Count: ${favorites.length}`
+    `[FAVORITES] Active favorites: ${favorites.length}`
   );
-}
-
-function logFavorites() {
-  console.log("⭐ CURRENT FAVORITES:");
-  favorites.forEach(st => {
-    console.log(" •", st.name, st.stream);
-  });
 }

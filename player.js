@@ -29,6 +29,33 @@ window.addEventListener("favorites-changed", () => {
 });
 
 // ===============================
+// FULLSCREEN
+// ===============================
+
+const playerSection = document.getElementById("player");
+const enterFsBtn = document.getElementById("enter-fullscreen");
+const exitFsBtn = document.getElementById("exit-fullscreen");
+
+enterFsBtn.addEventListener("click", () => {
+  if (playerSection.requestFullscreen) {
+    playerSection.requestFullscreen();
+  }
+});
+
+exitFsBtn.addEventListener("click", () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  }
+});
+
+document.addEventListener("fullscreenchange", () => {
+  if (splide) {
+    splide.refresh();
+  }
+});
+
+
+// ===============================
 // CAROUSEL BUILD/REBUILD
 // ===============================
 

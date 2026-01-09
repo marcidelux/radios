@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Radio Player</title>
+  <link rel="icon" type="image/x-icon" href="/pics/favicon.png">
 
   <!-- Splide CSS -->
   <link
@@ -13,18 +14,18 @@
 
   <!-- Player + Favorites styles -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="player.css" />
   <link rel="stylesheet" href="favorites.css" />
 </head>
 
 <body>
-
-  <!-- 🔝 Header -->
-  <header>
-    <h1>📻</h1>
-  </header>
-
   <!-- 🎚 PLAYER -->
   <section id="player">
+    <div id="player-toolbar">
+      <button id="enter-fullscreen" title="Fullscreen">⤢</button>
+      <button id="exit-fullscreen" title="Exit fullscreen">🗗</button>
+    </div>
+
     <div id="radio-splide" class="splide">
       <div class="splide__track">
         <ul class="splide__list" id="stationList"></ul>
@@ -36,7 +37,25 @@
 
   <!-- ⭐ FAVORITES -->
   <section id="favorites">
-    <h2>Favorites</h2>
+    <h2>Stations</h2>
+    <div id="station-filters">
+
+      <select id="filter-country">
+        <option value="">All countries</option>
+      </select>
+
+      <div class="multiselect" id="genre-select">
+        <div class="multiselect-label" id="genre-label">
+          Select genres
+        </div>
+
+        <div class="multiselect-options" id="filter-genres">
+          <!-- genre checkboxes injected here -->
+        </div>
+      </div>
+      <button id="filter-apply">Search</button>
+    </div>
+
     <div id="favorites-container">
       <!-- table injected by favorites.js -->
     </div>
