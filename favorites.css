@@ -1,0 +1,154 @@
+body {
+  background: #0d0d0d;
+  color: white;
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+}
+
+/* ===============================
+   TABLE
+=============================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+#favorites-table img {
+  max-height: 100px;
+  max-width: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.3);
+}
+
+/* ===============================
+   FILTER BAR LAYOUT
+=============================== */
+
+#station-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Shared control height */
+#station-filters select,
+#station-filters button,
+.multiselect-label {
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   MULTISELECT (GENRES)
+=============================== */
+
+.multiselect {
+  position: relative;
+  display: inline-block;
+}
+
+/* The visible dropdown "button" */
+.multiselect-label {
+  width: 180px;
+  padding: 0 10px;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+  user-select: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown panel */
+.multiselect-options {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Make option text readable on white */
+.multiselect-options label {
+  color: #000;
+  display: block;
+  padding: 2px 4px;
+}
+
+/* Open state */
+.multiselect.open .multiselect-options {
+  display: block;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+#pagination .page-btn {
+  background: #111;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+#pagination .page-btn:hover:enabled {
+  background: #222;
+}
+
+#pagination .page-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+#pagination .page-btn.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  font-weight: 600;
+}
+
+#pagination .page-ellipsis {
+  color: #bbb;
+  padding: 0 4px;
+  user-select: none;
+}
+
+.page-size-select {
+  background: #111;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}

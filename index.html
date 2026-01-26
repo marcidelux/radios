@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radio Carousel</title>
+  <title>Radio Player</title>
+  <link rel="icon" type="image/x-icon" href="/pics/favicon.png">
 
   <!-- Splide CSS -->
   <link
@@ -11,29 +12,61 @@
     href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css"
   />
 
-  <!-- Your CSS -->
+  <!-- Player + Favorites styles -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="player.css" />
+  <link rel="stylesheet" href="favorites.css" />
 </head>
 
 <body>
-  <h1>📻</h1>
-
-  <div id="radio-splide" class="splide">
-    <div class="splide__track">
-      <ul class="splide__list" id="stationList"></ul>
+  <!-- 🎚 PLAYER -->
+  <section id="player">
+    <div id="player-toolbar">
+      <button id="enter-fullscreen" title="Fullscreen">⤢</button>
+      <button id="exit-fullscreen" title="Exit fullscreen">🗗</button>
     </div>
-  </div>
 
-  <!-- Single shared audio element -->
-  <audio id="audioPlayer" playsinline></audio>
+    <div id="radio-splide" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list" id="stationList"></ul>
+      </div>
+    </div>
 
-  <!-- Splide JS -->
+    <audio id="audioPlayer" playsinline></audio>
+  </section>
+
+  <!-- ⭐ FAVORITES -->
+  <section id="favorites">
+    <h2>Stations</h2>
+
+    <div id="station-filters">
+      <select id="filter-country">
+        <option value="">All countries</option>
+      </select>
+
+      <div class="multiselect" id="genre-select">
+        <div class="multiselect-label" id="genre-label">
+          Select genres
+        </div>
+        <div class="multiselect-options" id="filter-genres"></div>
+      </div>
+
+      <button id="filter-apply">Search</button>
+    </div>
+
+    <div id="favorites-container"></div>
+
+    <!-- ✅ THIS WAS MISSING -->
+    <div id="pagination"></div>
+  </section>
+
+  <!-- Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
-
-  <!-- HLS.js -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-  <!-- Your JS -->
-  <script src="script.js"></script>
+  <!-- Components -->
+  <script type="module" src="player.js"></script>
+  <script type="module" src="favorites.js"></script>
+
 </body>
 </html>
