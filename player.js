@@ -55,6 +55,13 @@ document.addEventListener("fullscreenchange", () => {
 });
 
 
+// INIT PART
+
+initAudioEvents();
+initMediaSession();
+
+
+
 // ===============================
 // CAROUSEL BUILD/REBUILD
 // ===============================
@@ -152,6 +159,23 @@ function registerClickHandler() {
   });
 }
 
+
+// ===============================
+// NEXT / PREV callbacks
+// ===============================
+
+function carouselNext() {
+  if (!splide) return;
+  if (splide.state.is(Splide.STATES.MOVING)) return;
+  splide.go("+1");
+}
+
+function carouselPrev() {
+  if (!splide) return;
+  if (splide.state.is(Splide.STATES.MOVING)) return;
+  splide.go("-1");
+}
+
 // ===============================
 // AUDIO CONTROL
 // ===============================
@@ -238,8 +262,6 @@ function stopPlayback() {
 // AUDIO EVENTS (SOURCE OF TRUTH)
 // ===============================
 
-initAudioEvents();
-
 function initAudioEvents() {
   audio.addEventListener("play", () => {
     console.log("[AUDIO] play");
@@ -252,6 +274,19 @@ function initAudioEvents() {
     isPlaying = false;
     setActiveState("paused");
   });
+}
+
+
+function initMediaSession() {
+  if (!("mediaSession" in navigator)) return;
+
+  // Play/pause should map to your existing audio control
+  navigator.mediaSession.setActionHandler("play", () => resumeAudio());
+  navigator.mediaSession.setActionHandler("pause", () => pauseAudio());
+
+  // Map OS media buttons (AVRCP next/prev) to carousel movement
+  navigator.mediaSession.setActionHandler("nexttrack", () => carouselNext());
+  navigator.mediaSession.setActionHandler("previoustrack", () => carouselPrev());
 }
 
 // ===============================

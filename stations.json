@@ -123,6 +123,18 @@
       ],
       "image": "pics/HU/tilos.png",
       "stream": "https://stream.tilos.hu/analog"
+    },
+    {
+      "id": "HU_003",
+      "name": "Danko",
+      "country": "HU",
+      "genres": [
+        "Talk",
+        "Music",
+        "Alternative"
+      ],
+      "image": "pics/HU/danko.png",
+      "stream": "http://mr-stream.mediaconnect.hu/4748/mr7.mp3"
     }
   ]
 }

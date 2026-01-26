@@ -38,8 +38,8 @@
   <!-- ⭐ FAVORITES -->
   <section id="favorites">
     <h2>Stations</h2>
-    <div id="station-filters">
 
+    <div id="station-filters">
       <select id="filter-country">
         <option value="">All countries</option>
       </select>
@@ -48,17 +48,16 @@
         <div class="multiselect-label" id="genre-label">
           Select genres
         </div>
-
-        <div class="multiselect-options" id="filter-genres">
-          <!-- genre checkboxes injected here -->
-        </div>
+        <div class="multiselect-options" id="filter-genres"></div>
       </div>
+
       <button id="filter-apply">Search</button>
     </div>
 
-    <div id="favorites-container">
-      <!-- table injected by favorites.js -->
-    </div>
+    <div id="favorites-container"></div>
+
+    <!-- ✅ THIS WAS MISSING -->
+    <div id="pagination"></div>
   </section>
 
   <!-- Libraries -->
