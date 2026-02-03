@@ -35,13 +35,22 @@ input[type="checkbox"] {
 }
 
 /* ===============================
-   FILTER BAR LAYOUT
+   FILTER BAR LAYOUT (MODIFIED)
 =============================== */
 
 #station-filters {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* critical: prevent overflow */
+#station-filters > * {
+  flex: 1 1 0;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Shared control height */
@@ -51,6 +60,8 @@ input[type="checkbox"] {
   height: 36px;
   line-height: 36px;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* ===============================
@@ -59,12 +70,11 @@ input[type="checkbox"] {
 
 .multiselect {
   position: relative;
-  display: inline-block;
+  width: 100%;
 }
 
 /* The visible dropdown "button" */
 .multiselect-label {
-  width: 180px;
   padding: 0 10px;
   border: 1px solid #aaa;
   cursor: pointer;
@@ -90,6 +100,8 @@ input[type="checkbox"] {
   padding: 6px;
   max-height: 200px;
   overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Make option text readable on white */
@@ -103,6 +115,10 @@ input[type="checkbox"] {
 .multiselect.open .multiselect-options {
   display: block;
 }
+
+/* ===============================
+   PAGINATION
+=============================== */
 
 #pagination {
   display: flex;

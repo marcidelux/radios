@@ -11,6 +11,10 @@ let hls = null;
 let isPlaying = false;
 let audioUnlocked = false;
 
+// Preview playback (triggered from favorites table logo click)
+let isPreviewing = false;
+let previewStation = null;
+
 // ===============================
 // INIT
 // ===============================
@@ -26,6 +30,36 @@ window.addEventListener("favorites-changed", () => {
 
   const newStations = getFavorites();
   updateStations(newStations);
+});
+
+// Favorites table preview controls
+window.addEventListener("preview-play", (e) => {
+  const station = e?.detail?.station;
+  if (!station) return;
+
+  console.log("[PLAYER] Preview play:", station.name);
+  isPreviewing = true;
+  previewStation = station;
+  setPreviewUI(true);
+
+  // Preview should always stop current carousel playback
+  stopPlayback();
+
+  // Logo click is a user gesture -> safe to treat as unlock
+  if (!audioUnlocked) audioUnlocked = true;
+  playStream(station.stream);
+});
+
+window.addEventListener("preview-stop", () => {
+  if (!isPreviewing) return;
+
+  console.log("[PLAYER] Preview stop");
+  isPreviewing = false;
+  previewStation = null;
+  setPreviewUI(false);
+
+  // Requirement: stop playback; do not auto-resume carousel station
+  stopPlayback();
 });
 
 // ===============================
@@ -54,13 +88,10 @@ document.addEventListener("fullscreenchange", () => {
   }
 });
 
-
 // INIT PART
 
 initAudioEvents();
 initMediaSession();
-
-
 
 // ===============================
 // CAROUSEL BUILD/REBUILD
@@ -159,7 +190,6 @@ function registerClickHandler() {
   });
 }
 
-
 // ===============================
 // NEXT / PREV callbacks
 // ===============================
@@ -183,6 +213,14 @@ function carouselPrev() {
 function handleCenterClick() {
   console.log("[PLAYER] Center slide clicked");
 
+  // If preview is active, exit preview first; carousel click becomes the new source of truth.
+  if (isPreviewing) {
+    isPreviewing = false;
+    previewStation = null;
+    setPreviewUI(false);
+    window.dispatchEvent(new CustomEvent("preview-stop"));
+  }
+
   // iOS unlock: first user gesture starts audio
   if (!audioUnlocked) {
     console.log("[PLAYER] Unlocking audio (iOS)");
@@ -199,11 +237,29 @@ function handleCenterClick() {
   }
 }
 
-function playStation(index) {
-  const station = stations[index];
-  if (!station) return;
+// ===============================
+// PREVIEW UI
+// ===============================
 
-  console.log("[PLAYER] Playing station:", station.name);
+function setPreviewUI(enabled) {
+  // Let CSS decide how "red" looks.
+  // Fallback: inline style if no CSS exists.
+  playerSection.classList.toggle("previewing", enabled);
+  if (enabled) {
+    playerSection.dataset.mode = "preview";
+  } else {
+    delete playerSection.dataset.mode;
+  }
+}
+
+// ===============================
+// PLAY BY URL (used by preview)
+// ===============================
+
+function playStream(url) {
+  if (!url) return;
+
+  console.log("[PLAYER] Playing stream URL:", url);
 
   // Stop previous
   audio.pause();
@@ -215,24 +271,38 @@ function playStation(index) {
     hls = null;
   }
 
-  // HLS
-  if (station.stream.endsWith(".m3u8")) {
+  if (url.endsWith(".m3u8")) {
     if (window.Hls && Hls.isSupported()) {
       hls = new Hls();
-      hls.loadSource(station.stream);
+      hls.loadSource(url);
       hls.attachMedia(audio);
     } else {
-      // Safari native HLS
-      audio.src = station.stream;
+      audio.src = url; // Safari native HLS
     }
   } else {
-    // MP3 / AAC
-    audio.src = station.stream;
+    audio.src = url;
   }
 
   audio.play().catch(err => {
     console.warn("[PLAYER] audio.play failed:", err);
   });
+}
+
+function playStation(index) {
+  const station = stations[index];
+  if (!station) return;
+
+  console.log("[PLAYER] Playing station:", station.name);
+
+  // Leaving preview mode when carousel initiates playback
+  if (isPreviewing) {
+    isPreviewing = false;
+    previewStation = null;
+    setPreviewUI(false);
+    window.dispatchEvent(new CustomEvent("preview-stop"));
+  }
+
+  playStream(station.stream);
 }
 
 function pauseAudio() {
@@ -275,7 +345,6 @@ function initAudioEvents() {
     setActiveState("paused");
   });
 }
-
 
 function initMediaSession() {
   if (!("mediaSession" in navigator)) return;

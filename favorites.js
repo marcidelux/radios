@@ -12,6 +12,42 @@ let genres = {};
 
 let favorites = []; // full station objects (exported to player.js)
 
+// ===============================
+// PREVIEW PLAYBACK STATE (logo click)
+// ===============================
+
+let previewStationId = null;
+
+function dispatchPreviewPlay(station) {
+  window.dispatchEvent(new CustomEvent("preview-play", { detail: { station } }));
+}
+
+function dispatchPreviewStop() {
+  window.dispatchEvent(new CustomEvent("preview-stop"));
+}
+
+function setPreviewRowHighlight(stationId) {
+  const rows = document.querySelectorAll("#favorites-table tbody tr");
+  rows.forEach(row => {
+    const isActive = row.dataset.stationId === stationId;
+    row.classList.toggle("preview-active", isActive);
+
+    const img = row.querySelector("img");
+    if (img) {
+      img.style.outline = isActive ? "3px solid #00ff00" : "";
+      img.style.outlineOffset = isActive ? "2px" : "";
+    }
+  });
+}
+
+function stopPreviewPlayback() {
+  if (!previewStationId) return;
+
+  previewStationId = null;
+  setPreviewRowHighlight(null);
+  dispatchPreviewStop();
+}
+
 const STORAGE_KEY = "favoriteStationIds";
 const PAGE_SIZE_KEY = "pageSize";
 
@@ -180,6 +216,8 @@ function updateGenreLabel() {
 document.getElementById("filter-apply").addEventListener("click", applyFilters);
 
 function applyFilters() {
+  // Requirement: refilter stops preview playback
+  stopPreviewPlayback();
   activeCountry = document.getElementById("filter-country").value || "";
 
   filteredStations = allStations.filter(station => {
@@ -233,6 +271,8 @@ function renderPagination(totalPages) {
   });
 
   sizeSelect.addEventListener("change", () => {
+    // Requirement: changing page-size stops preview playback
+    stopPreviewPlayback();
     pageSize = parseInt(sizeSelect.value, 10);
     savePageSize(pageSize);
     currentPage = 1;
@@ -248,7 +288,9 @@ function renderPagination(totalPages) {
 
   // Prev button
   container.appendChild(
-    makePageButton("Previous", currentPage > 1, () => {
+    makePageButton("<", currentPage > 1, () => {
+      // Requirement: pagination stops preview playback
+      stopPreviewPlayback();
       currentPage -= 1;
       renderCurrentPage();
     })
@@ -270,6 +312,8 @@ function renderPagination(totalPages) {
       String(pageNum),
       true,
       () => {
+        // Requirement: pagination stops preview playback
+        stopPreviewPlayback();
         currentPage = pageNum;
         renderCurrentPage();
       }
@@ -285,7 +329,9 @@ function renderPagination(totalPages) {
 
   // Next button
   container.appendChild(
-    makePageButton("Next", currentPage < totalPages, () => {
+    makePageButton(">", currentPage < totalPages, () => {
+      // Requirement: pagination stops preview playback
+      stopPreviewPlayback();
       currentPage += 1;
       renderCurrentPage();
     })
@@ -370,6 +416,38 @@ function buildTable(stations) {
       <td><img src="${station.image}" alt="${station.name}" /></td>
       <td><input type="checkbox" ${isChecked ? "checked" : ""} /></td>
     `;
+
+    // Logo click => preview/toggle preview
+    const logoImg = row.querySelector("img");
+    if (logoImg) {
+      logoImg.style.cursor = "pointer";
+      logoImg.tabIndex = 0;
+      logoImg.addEventListener("blur", () => {
+        if (previewStationId === station.id) stopPreviewPlayback();
+      });
+      logoImg.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Toggle off
+        if (previewStationId === station.id) {
+          stopPreviewPlayback();
+          return;
+        }
+
+        // Switch to new preview
+        previewStationId = station.id;
+        setPreviewRowHighlight(station.id);
+        dispatchPreviewPlay(station);
+        logoImg.focus({ preventScroll: true });
+      });
+      logoImg.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          logoImg.click();
+        }
+      });
+    }
 
     // IMPORTANT: update storage incrementally (pagination-safe)
     row.querySelector("input").addEventListener("change", (e) => {
