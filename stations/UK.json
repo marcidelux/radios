@@ -1,0 +1,39 @@
+[
+    {
+        "id": "UK_001",
+        "name": "NTS Radio 1",
+        "country": "UK",
+        "genres": [
+            "Music",
+            "Alternative",
+            "DJ"
+        ],
+        "image": "pics/UK/nts-1.png",
+        "stream": "https://stream-relay-geo.ntslive.net/stream"
+    },
+    {
+        "id": "UK_002",
+        "name": "NTS Radio 2",
+        "country": "UK",
+        "genres": [
+            "Music",
+            "Alternative",
+            "DJ"
+        ],
+        "image": "pics/UK/nts-2.png",
+        "stream": "https://stream-relay-geo.ntslive.net/stream2"
+    },
+    {
+        "id": "UK_003",
+        "name": "BBC Radio 4",
+        "country": "UK",
+        "genres": [
+            "Talk",
+            "Comedy",
+            "Music",
+            "News"
+        ],
+        "image": "pics/UK/bbc4.png",
+        "stream": "https://as-hls-ww-live.akamaized.net/pool_55057080/live/ww/bbc_radio_fourfm/bbc_radio_fourfm.isml/bbc_radio_fourfm-audio%3d96000.norewind.m3u8"
+    }
+]

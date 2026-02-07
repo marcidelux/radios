@@ -1,0 +1,13 @@
+[
+    {
+      "id": "FR",
+      "name": "France Culture",
+      "country": "FR",
+      "genres": [
+        "News",
+        "Talk"
+      ],
+      "image": "pics/FR/franceculture.png",
+      "stream": "https://icecast.radiofrance.fr/franceculture-midfi.mp3"
+    }
+]
