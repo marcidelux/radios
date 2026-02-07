@@ -3,7 +3,6 @@
     "version": "1.0",
     "updated": "2026-01-01"
   },
-
   "countries": {
     "HU": {
       "name": "Hungary",
@@ -18,37 +17,365 @@
       "flag": "🇫🇷"
     }
   },
-
   "genres": {
-    "Music": {
-      "label": "Music"
+    "00s": {
+      "label": "00s"
     },
-    "Electronic": {
-      "label": "Electronic"
+    "2000s": {
+      "label": "2000s"
     },
-    "Jazz": {
-      "label": "Jazz"
+    "80's": {
+      "label": "80's"
     },
-    "Alternative": {
-      "label": "Alternative"
+    "80s": {
+      "label": "80s"
     },
-    "Talk": {
-      "label": "Talk Radio"
+    "90's": {
+      "label": "90's"
     },
-    "News": {
-      "label": "News Radio"
+    "90s": {
+      "label": "90s"
     },
-    "Comedy": {
-      "label": "Comedy"
+    "acoustic": {
+      "label": "acoustic"
     },
-    "DJ": {
-      "label": "DJ"
+    "adult contemporary": {
+      "label": "adult contemporary"
     },
-    "Politics": {
-      "label": "Politics"
+    "adventist": {
+      "label": "adventist"
+    },
+    "all-time favourites": {
+      "label": "all-time favourites"
+    },
+    "alternative": {
+      "label": "alternative"
+    },
+    "alternative rock": {
+      "label": "alternative rock"
+    },
+    "anthems": {
+      "label": "anthems"
+    },
+    "blues": {
+      "label": "blues"
+    },
+    "breakbeat": {
+      "label": "breakbeat"
+    },
+    "breakbeat hardcore": {
+      "label": "breakbeat hardcore"
+    },
+    "buddhism": {
+      "label": "buddhism"
+    },
+    "children": {
+      "label": "children"
+    },
+    "chill": {
+      "label": "chill"
+    },
+    "chillout": {
+      "label": "chillout"
+    },
+    "christian": {
+      "label": "christian"
+    },
+    "christmas": {
+      "label": "christmas"
+    },
+    "christmas music": {
+      "label": "christmas music"
+    },
+    "classic": {
+      "label": "classic"
+    },
+    "classic hits": {
+      "label": "classic hits"
+    },
+    "classic rock": {
+      "label": "classic rock"
+    },
+    "classical": {
+      "label": "classical"
+    },
+    "classics": {
+      "label": "classics"
+    },
+    "club": {
+      "label": "club"
+    },
+    "comedy": {
+      "label": "comedy"
+    },
+    "community": {
+      "label": "community"
+    },
+    "contemporary hits": {
+      "label": "contemporary hits"
+    },
+    "cultural": {
+      "label": "cultural"
+    },
+    "dance": {
+      "label": "dance"
+    },
+    "deep house": {
+      "label": "deep house"
+    },
+    "duna média": {
+      "label": "duna média"
+    },
+    "easy listening": {
+      "label": "easy listening"
+    },
+    "edm": {
+      "label": "edm"
+    },
+    "electronic": {
+      "label": "electronic"
+    },
+    "entertainment": {
+      "label": "entertainment"
+    },
+    "eurodance": {
+      "label": "eurodance"
+    },
+    "film score": {
+      "label": "film score"
+    },
+    "folk": {
+      "label": "folk"
+    },
+    "folk music": {
+      "label": "folk music"
+    },
+    "folklore": {
+      "label": "folklore"
+    },
+    "free": {
+      "label": "free"
+    },
+    "freeform": {
+      "label": "freeform"
+    },
+    "funky": {
+      "label": "funky"
+    },
+    "groove": {
+      "label": "groove"
+    },
+    "guitar": {
+      "label": "guitar"
+    },
+    "guitar rock": {
+      "label": "guitar rock"
+    },
+    "happy hardcore": {
+      "label": "happy hardcore"
+    },
+    "happy music": {
+      "label": "happy music"
+    },
+    "hardcore": {
+      "label": "hardcore"
+    },
+    "heavy metal": {
+      "label": "heavy metal"
+    },
+    "hip-hop": {
+      "label": "hip-hop"
+    },
+    "hiphop": {
+      "label": "hiphop"
+    },
+    "hits": {
+      "label": "hits"
+    },
+    "holiday": {
+      "label": "holiday"
+    },
+    "house": {
+      "label": "house"
+    },
+    "hungarian ethno music": {
+      "label": "hungarian ethno music"
+    },
+    "hungarian folk music": {
+      "label": "hungarian folk music"
+    },
+    "hungarian pop music": {
+      "label": "hungarian pop music"
+    },
+    "independent": {
+      "label": "independent"
+    },
+    "indie": {
+      "label": "indie"
+    },
+    "indie rock": {
+      "label": "indie rock"
+    },
+    "italo": {
+      "label": "italo"
+    },
+    "jazz": {
+      "label": "jazz"
+    },
+    "katholic": {
+      "label": "katholic"
+    },
+    "katoliški": {
+      "label": "katoliški"
+    },
+    "lossless": {
+      "label": "lossless"
+    },
+    "lounge": {
+      "label": "lounge"
+    },
+    "love songs": {
+      "label": "love songs"
+    },
+    "metal": {
+      "label": "metal"
+    },
+    "minority": {
+      "label": "minority"
+    },
+    "movie scores": {
+      "label": "movie scores"
+    },
+    "movie soundtracks": {
+      "label": "movie soundtracks"
+    },
+    "music": {
+      "label": "music"
+    },
+    "news": {
+      "label": "news"
+    },
+    "oldies": {
+      "label": "oldies"
+    },
+    "party": {
+      "label": "party"
+    },
+    "politics": {
+      "label": "politics"
+    },
+    "pop": {
+      "label": "pop"
+    },
+    "pop dance": {
+      "label": "pop dance"
+    },
+    "pop rock": {
+      "label": "pop rock"
+    },
+    "progressive rock": {
+      "label": "progressive rock"
+    },
+    "protestant": {
+      "label": "protestant"
+    },
+    "psychedelic": {
+      "label": "psychedelic"
+    },
+    "psychill": {
+      "label": "psychill"
+    },
+    "psytrance": {
+      "label": "psytrance"
+    },
+    "public": {
+      "label": "public"
+    },
+    "r'n'b": {
+      "label": "r'n'b"
+    },
+    "rap": {
+      "label": "rap"
+    },
+    "religion": {
+      "label": "religion"
+    },
+    "religious": {
+      "label": "religious"
+    },
+    "remix": {
+      "label": "remix"
+    },
+    "retro": {
+      "label": "retro"
+    },
+    "rnb": {
+      "label": "rnb"
+    },
+    "rock": {
+      "label": "rock"
+    },
+    "romantic": {
+      "label": "romantic"
+    },
+    "smooth jazz": {
+      "label": "smooth jazz"
+    },
+    "soul": {
+      "label": "soul"
+    },
+    "soundtrack": {
+      "label": "soundtrack"
+    },
+    "soundtracks": {
+      "label": "soundtracks"
+    },
+    "spirituality": {
+      "label": "spirituality"
+    },
+    "sport": {
+      "label": "sport"
+    },
+    "sports": {
+      "label": "sports"
+    },
+    "summer": {
+      "label": "summer"
+    },
+    "talk": {
+      "label": "talk"
+    },
+    "tango": {
+      "label": "tango"
+    },
+    "top": {
+      "label": "top"
+    },
+    "top 40": {
+      "label": "top 40"
+    },
+    "top charts": {
+      "label": "top charts"
+    },
+    "top hits": {
+      "label": "top hits"
+    },
+    "top40": {
+      "label": "top40"
+    },
+    "trance": {
+      "label": "trance"
+    },
+    "university": {
+      "label": "university"
+    },
+    "variety": {
+      "label": "variety"
+    },
+    "various": {
+      "label": "various"
     }
   },
-
   "stations": [
     {
       "id": "UK_001",
@@ -88,7 +415,7 @@
       "stream": "https://as-hls-ww-live.akamaized.net/pool_55057080/live/ww/bbc_radio_fourfm/bbc_radio_fourfm.isml/bbc_radio_fourfm-audio%3d96000.norewind.m3u8"
     },
     {
-      "id": "FR_001",
+      "id": "FR",
       "name": "France Culture",
       "country": "FR",
       "genres": [
@@ -100,41 +427,1289 @@
     },
     {
       "id": "HU_001",
-      "name": "Klub",
+      "name": "Győr+ Rádió",
       "country": "HU",
       "genres": [
-        "News",
-        "Music",
-        "Politics"
+        "classical",
+        "comedy",
+        "news",
+        "music"
       ],
-      "image": "pics/HU/klub.png",
-      "stream": "https://stream.klubradio.hu:8443"
+      "image": "pics/HU/HU_001.png",
+      "stream": "https://stream.42netmedia.com:8443/sc_gyor1"
     },
     {
       "id": "HU_002",
-      "name": "Tilos",
+      "name": "AdventNet rádió",
       "country": "HU",
       "genres": [
-        "Talk",
-        "Music",
-        "Alternative",
-        "DJ",
-        "Politics"
+        "christian",
+        "cultural",
+        "religion"
       ],
-      "image": "pics/HU/tilos.png",
-      "stream": "https://stream.tilos.hu/analog"
+      "image": "pics/HU/HU_002.png",
+      "stream": "http://radio.adventnet.hu:8000/stream"
     },
     {
       "id": "HU_003",
-      "name": "Danko",
+      "name": "Aktív Rádió",
       "country": "HU",
       "genres": [
-        "Talk",
-        "Music",
-        "Alternative"
+        "pop"
       ],
-      "image": "pics/HU/danko.png",
-      "stream": "http://mr-stream.mediaconnect.hu/4748/mr7.mp3"
+      "image": "pics/HU/HU_003.png",
+      "stream": "http://aktivradio.hu:8000/aktiv.mp3"
+    },
+    {
+      "id": "HU_004",
+      "name": "Argentine Tango Radio",
+      "country": "HU",
+      "genres": [
+        "tango"
+      ],
+      "image": "pics/HU/HU_004.png",
+      "stream": "https://ais-edge94-nyc04.cdnstream.com/2202_128.mp3"
+    },
+    {
+      "id": "HU_005",
+      "name": "BALATONICA RADIO",
+      "country": "HU",
+      "genres": [
+        "chillout",
+        "lounge"
+      ],
+      "image": "pics/HU/HU_005.png",
+      "stream": "http://balatonica.hu:8000/stream_high"
+    },
+    {
+      "id": "HU_006",
+      "name": "Base FM",
+      "country": "HU",
+      "genres": [
+        "hiphop",
+        "rap",
+        "rnb"
+      ],
+      "image": "pics/HU/HU_006.png",
+      "stream": "https://icast.connectmedia.hu/5401/live.mp3"
+    },
+    {
+      "id": "HU_007",
+      "name": "BDPST ROCK",
+      "country": "HU",
+      "genres": [
+        "alternative rock",
+        "classic rock",
+        "indie rock",
+        "lossless",
+        "metal",
+        "pop rock",
+        "progressive rock",
+        "rock"
+      ],
+      "image": "pics/HU/HU_007.png",
+      "stream": "http://s2.audiostream.hu:8091/bdpstrock_FLAC"
+    },
+    {
+      "id": "HU_008",
+      "name": "Best FM - Budapest",
+      "country": "HU",
+      "genres": [
+        "adult contemporary",
+        "news",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_008.png",
+      "stream": "https://icast.connectmedia.hu/5101/live.mp3/;"
+    },
+    {
+      "id": "HU_009",
+      "name": "Best FM - Debrecen",
+      "country": "HU",
+      "genres": [
+        "adult contemporary",
+        "news",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_009.png",
+      "stream": "http://stream.webthings.hu:8000/fm95-x-128.mp3"
+    },
+    {
+      "id": "HU_010",
+      "name": "Best FM - Eger",
+      "country": "HU",
+      "genres": [
+        "adult contemporary",
+        "news",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_010.png",
+      "stream": "http://icast.connectmedia.hu/5116/live.mp3/;"
+    },
+    {
+      "id": "HU_011",
+      "name": "Best FM - Pécs",
+      "country": "HU",
+      "genres": [
+        "adult contemporary",
+        "news",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_011.png",
+      "stream": "https://icast.connectmedia.hu/5128/live.mp3"
+    },
+    {
+      "id": "HU_012",
+      "name": "Best FM - Székesfehérvár",
+      "country": "HU",
+      "genres": [
+        "adult contemporary",
+        "news",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_012.png",
+      "stream": "http://icast.connectmedia.hu/5113/live.mp3"
+    },
+    {
+      "id": "HU_013",
+      "name": "Best FM - Szolnok",
+      "country": "HU",
+      "genres": [
+        "adult contemporary",
+        "news",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_013.png",
+      "stream": "http://icast.connectmedia.hu/5112/live.mp3"
+    },
+    {
+      "id": "HU_014",
+      "name": "Best FM - Zalaegerszeg",
+      "country": "HU",
+      "genres": [
+        "adult contemporary",
+        "news",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_014.png",
+      "stream": "http://icast.connectmedia.hu/5111/live.mp3"
+    },
+    {
+      "id": "HU_015",
+      "name": "Buddha FM",
+      "country": "HU",
+      "genres": [
+        "buddhism",
+        "religion",
+        "spirituality"
+      ],
+      "image": "pics/HU/HU_015.png",
+      "stream": "http://libretime.buddhafm.hu:4000/buddhafm"
+    },
+    {
+      "id": "HU_016",
+      "name": "Chiqui Radio",
+      "country": "HU",
+      "genres": [
+        "breakbeat",
+        "breakbeat hardcore",
+        "happy hardcore",
+        "hardcore",
+        "trance"
+      ],
+      "image": "pics/HU/HU_016.png",
+      "stream": "https://stream.zeno.fm/gvz27wezgghtv"
+    },
+    {
+      "id": "HU_017",
+      "name": "Cool FM",
+      "country": "HU",
+      "genres": [
+        "pop",
+        "university"
+      ],
+      "image": "pics/HU/HU_017.png",
+      "stream": "http://mediagw.e-tiger.net/stream/cfmhq"
+    },
+    {
+      "id": "HU_018",
+      "name": "Cool FM - Goldie'S",
+      "country": "HU",
+      "genres": [
+        "classic hits",
+        "university"
+      ],
+      "image": "pics/HU/HU_018.png",
+      "stream": "http://mediagw.e-tiger.net:8000/stream/goldhq"
+    },
+    {
+      "id": "HU_019",
+      "name": "Cool FM - kultX",
+      "country": "HU",
+      "genres": [
+        "alternative",
+        "pop",
+        "university"
+      ],
+      "image": "pics/HU/HU_019.png",
+      "stream": "http://mediagw.e-tiger.net/stream/krehq"
+    },
+    {
+      "id": "HU_020",
+      "name": "Cool FM - Xbeat",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "university"
+      ],
+      "image": "pics/HU/HU_020.png",
+      "stream": "http://mediagw.e-tiger.net/stream/xbeathq"
+    },
+    {
+      "id": "HU_021",
+      "name": "Cool.FM DANCE 2000's",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "retro"
+      ],
+      "image": "pics/HU/HU_021.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc04?ver=209775"
+    },
+    {
+      "id": "HU_022",
+      "name": "Cool.FM PARTY Hits",
+      "country": "HU",
+      "genres": [
+        "hits",
+        "party"
+      ],
+      "image": "pics/HU/HU_022.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc18?ver=975254"
+    },
+    {
+      "id": "HU_023",
+      "name": "Cool.FM REMIX MUSIC",
+      "country": "HU",
+      "genres": [
+        "remix"
+      ],
+      "image": "pics/HU/HU_023.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc23?ver=266114"
+    },
+    {
+      "id": "HU_024",
+      "name": "COOLFM (Classic) Rock",
+      "country": "HU",
+      "genres": [
+        "classic rock",
+        "rock"
+      ],
+      "image": "pics/HU/HU_024.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc10"
+    },
+    {
+      "id": "HU_025",
+      "name": "COOLFM Acoustic",
+      "country": "HU",
+      "genres": [
+        "acoustic",
+        "guitar",
+        "guitar rock"
+      ],
+      "image": "pics/HU/HU_025.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc12"
+    },
+    {
+      "id": "HU_026",
+      "name": "COOLFM Best Hits EVER",
+      "country": "HU",
+      "genres": [
+        "top charts",
+        "top hits",
+        "top40"
+      ],
+      "image": "pics/HU/HU_026.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc11"
+    },
+    {
+      "id": "HU_027",
+      "name": "COOLFM Bside/Alternative",
+      "country": "HU",
+      "genres": [
+        "alternative",
+        "alternative rock",
+        "indie"
+      ],
+      "image": "pics/HU/HU_027.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc16"
+    },
+    {
+      "id": "HU_028",
+      "name": "COOLFM Filmzenék",
+      "country": "HU",
+      "genres": [
+        "film score",
+        "movie scores",
+        "movie soundtracks",
+        "soundtracks"
+      ],
+      "image": "pics/HU/HU_028.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc01?ver=753658"
+    },
+    {
+      "id": "HU_029",
+      "name": "COOLFM Hazai Kedvencek",
+      "country": "HU",
+      "genres": [
+        "all-time favourites",
+        "hungarian pop music",
+        "top"
+      ],
+      "image": "pics/HU/HU_029.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc19"
+    },
+    {
+      "id": "HU_030",
+      "name": "COOLFM Jazz",
+      "country": "HU",
+      "genres": [
+        "jazz",
+        "smooth jazz"
+      ],
+      "image": "pics/HU/HU_030.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc13"
+    },
+    {
+      "id": "HU_031",
+      "name": "COOLFM Karácsonyi Dalok",
+      "country": "HU",
+      "genres": [
+        "christmas music",
+        "holiday"
+      ],
+      "image": "pics/HU/HU_031.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc27"
+    },
+    {
+      "id": "HU_032",
+      "name": "COOLFM Love Songs",
+      "country": "HU",
+      "genres": [
+        "easy listening",
+        "love songs",
+        "romantic"
+      ],
+      "image": "pics/HU/HU_032.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc28"
+    },
+    {
+      "id": "HU_033",
+      "name": "COOLFM Nyári Slágerek",
+      "country": "HU",
+      "genres": [
+        "hits",
+        "party",
+        "summer"
+      ],
+      "image": "pics/HU/HU_033.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc09"
+    },
+    {
+      "id": "HU_034",
+      "name": "Csukás Meserádió",
+      "country": "HU",
+      "genres": [
+        "children"
+      ],
+      "image": "pics/HU/HU_034.png",
+      "stream": "https://mr-stream.connectmedia.hu/4611/mr10.mp3"
+    },
+    {
+      "id": "HU_035",
+      "name": "DANCE 90'S",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "retro"
+      ],
+      "image": "pics/HU/HU_035.png",
+      "stream": "https://mediagw.e-tiger.net/stream/zc06?ver=887687"
+    },
+    {
+      "id": "HU_036",
+      "name": "Dance Wave Retro!",
+      "country": "HU",
+      "genres": [
+        "90s",
+        "dance"
+      ],
+      "image": "pics/HU/HU_036.png",
+      "stream": "https://retro.dancewave.online/retrodance.mp3"
+    },
+    {
+      "id": "HU_037",
+      "name": "Dance Wave!",
+      "country": "HU",
+      "genres": [
+        "club",
+        "dance",
+        "electronic",
+        "house",
+        "trance"
+      ],
+      "image": "pics/HU/HU_037.png",
+      "stream": "https://dancewave.online/dance.mp3"
+    },
+    {
+      "id": "HU_038",
+      "name": "Danubius Rádió",
+      "country": "HU",
+      "genres": [
+        "pop"
+      ],
+      "image": "pics/HU/HU_038.png",
+      "stream": "http://stream.danubiusradio.hu/danubius_128k"
+    },
+    {
+      "id": "HU_039",
+      "name": "Danubius Radio",
+      "country": "HU",
+      "genres": [
+        "2000s",
+        "80's",
+        "90s"
+      ],
+      "image": "pics/HU/HU_039.png",
+      "stream": "http://stream.danubiusradio.hu:8091/danubius_HiFi"
+    },
+    {
+      "id": "HU_040",
+      "name": "Deja Vu Radio",
+      "country": "HU",
+      "genres": [
+        "00s",
+        "90s",
+        "anthems",
+        "classic",
+        "dance",
+        "electronic",
+        "house"
+      ],
+      "image": "pics/HU/HU_040.png",
+      "stream": "https://carina.streamerr.co:8178/dejavuradio?type=http&nocache=297"
+    },
+    {
+      "id": "HU_041",
+      "name": "Duna World Rádió",
+      "country": "HU",
+      "genres": [
+        "duna média",
+        "news",
+        "public",
+        "talk"
+      ],
+      "image": "pics/HU/HU_041.png",
+      "stream": "http://mr-stream.mediaconnect.hu/4760/dwr.aac"
+    },
+    {
+      "id": "HU_042",
+      "name": "Enying FM Hungary",
+      "country": "HU",
+      "genres": [
+        "variety"
+      ],
+      "image": "pics/HU/HU_042.png",
+      "stream": "http://radioe.net:8080/efm_hd"
+    },
+    {
+      "id": "HU_043",
+      "name": "Európa Rádió Miskolc",
+      "country": "HU",
+      "genres": [
+        "christian",
+        "protestant",
+        "religious"
+      ],
+      "image": "pics/HU/HU_043.png",
+      "stream": "https://europaradio.hu/miskolc"
+    },
+    {
+      "id": "HU_044",
+      "name": "FM 103.9 A Rock",
+      "country": "HU",
+      "genres": [
+        "rock"
+      ],
+      "image": "pics/HU/HU_044.png",
+      "stream": "https://stream.rockradio.hu/"
+    },
+    {
+      "id": "HU_045",
+      "name": "Folkrádio",
+      "country": "HU",
+      "genres": [
+        "folk",
+        "folk music",
+        "folklore"
+      ],
+      "image": "pics/HU/HU_045.png",
+      "stream": "https://stream.folkradio.hu/folkradio.mp3"
+    },
+    {
+      "id": "HU_046",
+      "name": "Friss FM 93.4",
+      "country": "HU",
+      "genres": [
+        "pop",
+        "music"
+      ],
+      "image": "pics/HU/HU_046.png",
+      "stream": "http://stream.frissfm.hu:10050/;"
+    },
+    {
+      "id": "HU_047",
+      "name": "Gong Rádió",
+      "country": "HU",
+      "genres": [
+        "pop"
+      ],
+      "image": "pics/HU/HU_047.png",
+      "stream": "http://stream.gongradio.hu:8000/gong-fm.mp3"
+    },
+    {
+      "id": "HU_048",
+      "name": "Hujujuj",
+      "country": "HU",
+      "genres": [
+        "electronic"
+      ],
+      "image": "pics/HU/HU_048.png",
+      "stream": "http://radionova.hujujuj.com:8000/main"
+    },
+    {
+      "id": "HU_049",
+      "name": "Inforádió",
+      "country": "HU",
+      "genres": [
+        "news",
+        "talk"
+      ],
+      "image": "pics/HU/HU_049.png",
+      "stream": "http://stream.infostart.hu/lejatszo/index.html?sid=1"
+    },
+    {
+      "id": "HU_050",
+      "name": "Jazzy",
+      "country": "HU",
+      "genres": [
+        "jazz"
+      ],
+      "image": "pics/HU/HU_050.png",
+      "stream": "https://radio.musorok.org/listen/jazzy/jazzy.mp3"
+    },
+    {
+      "id": "HU_051",
+      "name": "Jazzy Cool",
+      "country": "HU",
+      "genres": [
+        "jazz",
+        "smooth jazz"
+      ],
+      "image": "pics/HU/HU_051.png",
+      "stream": "https://radio.musorok.org/listen/jazzycool/jazzycool.mp3"
+    },
+    {
+      "id": "HU_052",
+      "name": "Jazzy Groove",
+      "country": "HU",
+      "genres": [
+        "groove",
+        "smooth jazz"
+      ],
+      "image": "pics/HU/HU_052.png",
+      "stream": "https://radio.musorok.org/listen/jazzygroove/jazzygroove.mp3"
+    },
+    {
+      "id": "HU_053",
+      "name": "Jazzy Soul",
+      "country": "HU",
+      "genres": [
+        "jazz",
+        "smooth jazz",
+        "soul"
+      ],
+      "image": "pics/HU/HU_053.png",
+      "stream": "https://radio.musorok.org/listen/jazzysoul/jazzysoul.mp3"
+    },
+    {
+      "id": "HU_054",
+      "name": "Juventus",
+      "country": "HU",
+      "genres": [
+        "music"
+      ],
+      "image": "pics/HU/HU_054.png",
+      "stream": "http://s2.audiostream.hu:8080/juventus_192k"
+    },
+    {
+      "id": "HU_055",
+      "name": "Klubrádió",
+      "country": "HU",
+      "genres": [
+        "news",
+        "politics",
+        "talk",
+        "minority"
+      ],
+      "image": "pics/HU/HU_055.png",
+      "stream": "https://stream.klubradio.hu:8443"
+    },
+    {
+      "id": "HU_056",
+      "name": "Korona Fm100",
+      "country": "HU",
+      "genres": [
+        "pop"
+      ],
+      "image": "pics/HU/HU_056.png",
+      "stream": "http://82.141.165.6:8000/"
+    },
+    {
+      "id": "HU_057",
+      "name": "Laza Rádió - Mulatós",
+      "country": "HU",
+      "genres": [
+        "folk"
+      ],
+      "image": "pics/HU/HU_057.png",
+      "stream": "https://stream.lazaradio.com/mulatos.mp3"
+    },
+    {
+      "id": "HU_058",
+      "name": "Lépés Rádió",
+      "country": "HU",
+      "genres": [
+        "news",
+        "pop",
+        "retro",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_058.png",
+      "stream": "http://stream.nmih.hu:4000/live.mp3"
+    },
+    {
+      "id": "HU_059",
+      "name": "Luxfunk Blackmix",
+      "country": "HU",
+      "genres": [
+        "breakbeat",
+        "funky",
+        "hip-hop",
+        "rnb",
+        "soul"
+      ],
+      "image": "pics/HU/HU_059.png",
+      "stream": "https://luxfunkbroadcast.com/proxy/luxfunkblackmix/stream"
+    },
+    {
+      "id": "HU_060",
+      "name": "Luxfunk Radio",
+      "country": "HU",
+      "genres": [
+        "breakbeat",
+        "funky",
+        "hip-hop",
+        "rnb",
+        "soul"
+      ],
+      "image": "pics/HU/HU_060.png",
+      "stream": "https://luxfunkbroadcast.com/proxy/luxfunkradio/stream"
+    },
+    {
+      "id": "HU_061",
+      "name": "Magyar Evangéliumi Rádió",
+      "country": "HU",
+      "genres": [
+        "christian",
+        "cultural",
+        "religious"
+      ],
+      "image": "pics/HU/HU_061.png",
+      "stream": "http://stream.radio.co/s3fd8d173f/listen"
+    },
+    {
+      "id": "HU_062",
+      "name": "MegaMixer",
+      "country": "HU",
+      "genres": [
+        "dance"
+      ],
+      "image": "pics/HU/HU_062.png",
+      "stream": "http://gamershouse.hu:8000/livemega.mp3"
+    },
+    {
+      "id": "HU_063",
+      "name": "Mercy Rádió",
+      "country": "HU",
+      "genres": [
+        "hits",
+        "pop"
+      ],
+      "image": "pics/HU/HU_063.png",
+      "stream": "http://stream.mercyradio.eu/mercyradio.mp3"
+    },
+    {
+      "id": "HU_064",
+      "name": "Mercy Rádió - Kabaré",
+      "country": "HU",
+      "genres": [
+        "comedy",
+        "talk"
+      ],
+      "image": "pics/HU/HU_064.png",
+      "stream": "http://stream.mercyradio.eu/kabare.mp3"
+    },
+    {
+      "id": "HU_065",
+      "name": "MR5 - Parlamenti Adások",
+      "country": "HU",
+      "genres": [
+        "jazz",
+        "news",
+        "politics",
+        "public"
+      ],
+      "image": "pics/HU/HU_065.png",
+      "stream": "https://mr-stream.connectmedia.hu/4746/mr5.mp3"
+    },
+    {
+      "id": "HU_066",
+      "name": "MR8 - Duna World Rádió",
+      "country": "HU",
+      "genres": [
+        "news",
+        "public",
+        "talk"
+      ],
+      "image": "pics/HU/HU_066.png",
+      "stream": "https://mr-stream.connectmedia.hu/4761/dwr.mp3"
+    },
+    {
+      "id": "HU_067",
+      "name": "Nemzeti Sport Radio",
+      "country": "HU",
+      "genres": [
+        "entertainment",
+        "pop",
+        "sport",
+        "sports",
+        "talk"
+      ],
+      "image": "pics/HU/HU_067.png",
+      "stream": "https://icast.connectmedia.hu/4656/mr11.aac"
+    },
+    {
+      "id": "HU_068",
+      "name": "Nemzetiségi adások",
+      "country": "HU",
+      "genres": [
+        "duna média",
+        "minority",
+        "public",
+        "talk"
+      ],
+      "image": "pics/HU/HU_068.png",
+      "stream": "http://mr-stream.mediaconnect.hu/4743/mr4.aac"
+    },
+    {
+      "id": "HU_069",
+      "name": "Oxygen Classic Rock",
+      "country": "HU",
+      "genres": [
+        "classic rock",
+        "rock"
+      ],
+      "image": "pics/HU/HU_069.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenclassicrock"
+    },
+    {
+      "id": "HU_070",
+      "name": "Oxygen Classics",
+      "country": "HU",
+      "genres": [
+        "classical",
+        "classics"
+      ],
+      "image": "pics/HU/HU_070.png",
+      "stream": "https://oxygenmusic.hu:8443/Classic_128"
+    },
+    {
+      "id": "HU_071",
+      "name": "Oxygen Happy",
+      "country": "HU",
+      "genres": [
+        "happy music",
+        "hits"
+      ],
+      "image": "pics/HU/HU_071.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenhappy_128"
+    },
+    {
+      "id": "HU_072",
+      "name": "Oxygen Italo Hits",
+      "country": "HU",
+      "genres": [
+        "classic hits",
+        "eurodance",
+        "italo",
+        "pop dance"
+      ],
+      "image": "pics/HU/HU_072.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenitalohits"
+    },
+    {
+      "id": "HU_073",
+      "name": "Oxygen Music",
+      "country": "HU",
+      "genres": [
+        "hits",
+        "top",
+        "various"
+      ],
+      "image": "pics/HU/HU_073.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenmusic_192"
+    },
+    {
+      "id": "HU_074",
+      "name": "Oxygen Oldies",
+      "country": "HU",
+      "genres": [
+        "classic hits",
+        "oldies"
+      ],
+      "image": "pics/HU/HU_074.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenoldies"
+    },
+    {
+      "id": "HU_075",
+      "name": "Oxygen Spencer-Hill",
+      "country": "HU",
+      "genres": [
+        "easy listening",
+        "italo",
+        "pop dance",
+        "soundtrack"
+      ],
+      "image": "pics/HU/HU_075.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenspencerhillzenek"
+    },
+    {
+      "id": "HU_076",
+      "name": "Oxygen The 80s Hits",
+      "country": "HU",
+      "genres": [
+        "80's",
+        "80s",
+        "classic hits"
+      ],
+      "image": "pics/HU/HU_076.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenthe80shits"
+    },
+    {
+      "id": "HU_077",
+      "name": "Oxygen The 90s Hits",
+      "country": "HU",
+      "genres": [
+        "90's",
+        "90s",
+        "classic hits"
+      ],
+      "image": "pics/HU/HU_077.png",
+      "stream": "https://oxygenmusic.hu:8443/oxygenthe90shits"
+    },
+    {
+      "id": "HU_078",
+      "name": "Oxygen Xmas (320)",
+      "country": "HU",
+      "genres": [
+        "christmas"
+      ],
+      "image": "pics/HU/HU_078.png",
+      "stream": "https://oxygenmusic.hu:8000/xmas_320"
+    },
+    {
+      "id": "HU_079",
+      "name": "OZONE FM",
+      "country": "HU",
+      "genres": [
+        "top",
+        "hits"
+      ],
+      "image": "pics/HU/HU_079.png",
+      "stream": "https://oxygenmusic.hu:8000/ozonefm_128"
+    },
+    {
+      "id": "HU_080",
+      "name": "Petőfi Rádió",
+      "country": "HU",
+      "genres": [
+        "alternative",
+        "duna média",
+        "pop",
+        "public"
+      ],
+      "image": "pics/HU/HU_080.png",
+      "stream": "https://icast.connectmedia.hu/4738/mr2.mp3"
+    },
+    {
+      "id": "HU_081",
+      "name": "Poptarisznya Blues24",
+      "country": "HU",
+      "genres": [
+        "blues",
+        "classic rock",
+        "oldies"
+      ],
+      "image": "pics/HU/HU_081.png",
+      "stream": "http://adas.poptarisznya.hu:8200/blues.mp3"
+    },
+    {
+      "id": "HU_082",
+      "name": "Rádió 1",
+      "country": "HU",
+      "genres": [
+        "dance"
+      ],
+      "image": "pics/HU/HU_082.png",
+      "stream": "https://icast.connectmedia.hu/5201/live.mp3"
+    },
+    {
+      "id": "HU_083",
+      "name": "Rádió 1 - Békéscsaba",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "pop",
+        "top 40"
+      ],
+      "image": "pics/HU/HU_083.png",
+      "stream": "https://icast.connectmedia.hu/5233/live.mp3"
+    },
+    {
+      "id": "HU_084",
+      "name": "Rádió 1 - Sopron",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "hits",
+        "pop",
+        "top 40"
+      ],
+      "image": "pics/HU/HU_084.png",
+      "stream": "http://icast.connectmedia.hu/5015/live.mp3"
+    },
+    {
+      "id": "HU_085",
+      "name": "Rádió 1 Debrecen",
+      "country": "HU",
+      "genres": [
+        "pop"
+      ],
+      "image": "pics/HU/HU_085.png",
+      "stream": "http://91.82.85.44:8080/debrecenradiofm95"
+    },
+    {
+      "id": "HU_086",
+      "name": "Rádió 47",
+      "country": "HU",
+      "genres": [
+        "pop"
+      ],
+      "image": "pics/HU/HU_086.png",
+      "stream": "https://s01.diazol.hu:9102/live.mp3"
+    },
+    {
+      "id": "HU_087",
+      "name": "Rádió 88 Club",
+      "country": "HU",
+      "genres": [
+        "dance"
+      ],
+      "image": "pics/HU/HU_087.png",
+      "stream": "http://stream2.radio88.hu:8400/;stream"
+    },
+    {
+      "id": "HU_088",
+      "name": "Rádió 88 Retro",
+      "country": "HU",
+      "genres": [
+        "hits",
+        "retro"
+      ],
+      "image": "pics/HU/HU_088.png",
+      "stream": "http://stream1.radio88.hu:8300/;stream"
+    },
+    {
+      "id": "HU_089",
+      "name": "Rádió 88 Top",
+      "country": "HU",
+      "genres": [
+        "contemporary hits",
+        "top 40"
+      ],
+      "image": "pics/HU/HU_089.png",
+      "stream": "http://stream3.radio88.hu:8500/;stream"
+    },
+    {
+      "id": "HU_090",
+      "name": "Rádió Antritt",
+      "country": "HU",
+      "genres": [
+        "00s",
+        "80s",
+        "90s",
+        "adult contemporary",
+        "top 40"
+      ],
+      "image": "pics/HU/HU_090.png",
+      "stream": "http://stream.radioantritt.hu:8000/Antritt"
+    },
+    {
+      "id": "HU_091",
+      "name": "Radio Sunrise",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "house"
+      ],
+      "image": "pics/HU/HU_091.png",
+      "stream": "https://s03.diazol.hu:7172/stream"
+    },
+    {
+      "id": "HU_092",
+      "name": "RadiOzora Chill",
+      "country": "HU",
+      "genres": [
+        "chill",
+        "chillout",
+        "psychedelic",
+        "psychill"
+      ],
+      "image": "pics/HU/HU_092.png",
+      "stream": "https://chill.out.airtime.pro/chill_a"
+    },
+    {
+      "id": "HU_093",
+      "name": "RadiOzora Trance",
+      "country": "HU",
+      "genres": [
+        "psychedelic",
+        "psytrance",
+        "trance"
+      ],
+      "image": "pics/HU/HU_093.png",
+      "stream": "https://trance.out.airtime.pro/trance_a"
+    },
+    {
+      "id": "HU_094",
+      "name": "Reménység Hangja Rádió",
+      "country": "HU",
+      "genres": [
+        "adventist",
+        "christian",
+        "cultural",
+        "religious"
+      ],
+      "image": "pics/HU/HU_094.png",
+      "stream": "https://live.rvs.ro/mg"
+    },
+    {
+      "id": "HU_095",
+      "name": "Retro Rádió",
+      "country": "HU",
+      "genres": [
+        "pop",
+        "rock",
+        "retro",
+        "80s",
+        "90s",
+        "2000s"
+      ],
+      "image": "pics/HU/HU_095.png",
+      "stream": "https://icast.connectmedia.hu/5001/live.mp3"
+    },
+    {
+      "id": "HU_096",
+      "name": "Rise FM Classic",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "edm",
+        "house"
+      ],
+      "image": "pics/HU/HU_096.png",
+      "stream": "https://oxygenmusic.hu:8443/RISE_CLASSIC_128"
+    },
+    {
+      "id": "HU_097",
+      "name": "Rise FM Deep",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "deep house",
+        "house"
+      ],
+      "image": "pics/HU/HU_097.png",
+      "stream": "https://oxygenmusic.hu:8443/RISE_DEEPHOUSE_128"
+    },
+    {
+      "id": "HU_098",
+      "name": "Rise FM Hit House",
+      "country": "HU",
+      "genres": [
+        "dance",
+        "house"
+      ],
+      "image": "pics/HU/HU_098.png",
+      "stream": "https://oxygenmusic.hu:8443/RISE_HITHOUSE_128"
+    },
+    {
+      "id": "HU_099",
+      "name": "Rise FM R'n'B",
+      "country": "HU",
+      "genres": [
+        "r'n'b",
+        "rnb"
+      ],
+      "image": "pics/HU/HU_099.png",
+      "stream": "https://oxygenmusic.hu:8443/RISE_RNB_128"
+    },
+    {
+      "id": "HU_100",
+      "name": "ROCK FM: 103.9",
+      "country": "HU",
+      "genres": [
+        "rock"
+      ],
+      "image": "pics/HU/HU_100.png",
+      "stream": "https://icast.connectmedia.hu/5301/live.mp3/"
+    },
+    {
+      "id": "HU_101",
+      "name": "Roxy Rádió",
+      "country": "HU",
+      "genres": [
+        "contemporary hits",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_101.png",
+      "stream": "https://s2.audiostream.hu/roxy_192k"
+    },
+    {
+      "id": "HU_102",
+      "name": "Sláger FM",
+      "country": "HU",
+      "genres": [
+        "80s",
+        "90s",
+        "classic hits"
+      ],
+      "image": "pics/HU/HU_102.png",
+      "stream": "http://92.61.114.159:7812/slagerfm256.mp3"
+    },
+    {
+      "id": "HU_103",
+      "name": "Sola Rádió",
+      "country": "HU",
+      "genres": [
+        "christian",
+        "cultural",
+        "religious"
+      ],
+      "image": "pics/HU/HU_103.png",
+      "stream": "http://188.165.11.30:7000/live.mp3"
+    },
+    {
+      "id": "HU_104",
+      "name": "Sunshine FM",
+      "country": "HU",
+      "genres": [
+        "news",
+        "top 40",
+        "top hits"
+      ],
+      "image": "pics/HU/HU_104.png",
+      "stream": "http://195.56.193.129:8100/;stream/1?icy=http"
+    },
+    {
+      "id": "HU_105",
+      "name": "Szent István Rádió",
+      "country": "HU",
+      "genres": [
+        "christian",
+        "katholic",
+        "katoliški"
+      ],
+      "image": "pics/HU/HU_105.png",
+      "stream": "http://online.szentistvanradio.hu:7000/adas"
+    },
+    {
+      "id": "HU_106",
+      "name": "Szent Korona Rádió",
+      "country": "HU",
+      "genres": [
+        "heavy metal",
+        "metal",
+        "rock"
+      ],
+      "image": "pics/HU/HU_106.png",
+      "stream": "https://szkrcast.ddns.net/radio/8000/radio.mp3"
+    },
+    {
+      "id": "HU_107",
+      "name": "Szent Korona Rádió - Forrás",
+      "country": "HU",
+      "genres": [
+        "hungarian ethno music",
+        "hungarian folk music"
+      ],
+      "image": "pics/HU/HU_107.png",
+      "stream": "https://szkrcast.ddns.net/radio/8010/radio.mp3"
+    },
+    {
+      "id": "HU_108",
+      "name": "Tilos Rádió",
+      "country": "HU",
+      "genres": [
+        "alternative",
+        "community",
+        "free",
+        "freeform",
+        "independent"
+      ],
+      "image": "pics/HU/HU_108.png",
+      "stream": "http://stream.tilos.hu/tilos"
+    },
+    {
+      "id": "HU_109",
+      "name": "Youventus Rádió",
+      "country": "HU",
+      "genres": [
+        "pop"
+      ],
+      "image": "pics/HU/HU_109.png",
+      "stream": "http://s2.audiostream.hu/juventus_192k"
+    },
+    {
+      "id": "HU_110",
+      "name": "Zalan Radio",
+      "country": "HU",
+      "genres": [
+        "house"
+      ],
+      "image": "pics/HU/HU_110.png",
+      "stream": "https://stream.zeno.fm/kvqrsxeeafctv"
     }
   ]
 }

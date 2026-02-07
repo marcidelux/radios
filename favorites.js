@@ -156,18 +156,10 @@ function buildGenreFilter() {
 
   Object.entries(genres).forEach(([key, meta]) => {
     const label = document.createElement("label");
-    label.style.display = "block";
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.value = key;
-
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) activeGenres.add(key);
-      else activeGenres.delete(key);
-
-      updateGenreLabel();
-    });
 
     label.appendChild(checkbox);
     label.append(" " + meta.label);
@@ -181,19 +173,10 @@ function buildGenreFilter() {
 // ===============================
 
 function initGenreDropdown() {
-  const genreSelect = document.getElementById("genre-select");
   const genreLabel = document.getElementById("genre-label");
 
-  genreLabel.addEventListener("click", () => {
-    genreSelect.classList.toggle("open");
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!genreSelect.contains(e.target)) {
-      genreSelect.classList.remove("open");
-    }
-  });
-
+  createGenreModal();
+  genreLabel.addEventListener("click", openGenreModal);
   updateGenreLabel();
 }
 
@@ -207,6 +190,102 @@ function updateGenreLabel() {
   } else {
     genreLabel.textContent = `${activeGenres.size} genres`;
   }
+}
+
+// ===============================
+// GENRE MODAL
+// ===============================
+
+let genreModal = null;
+
+function createGenreModal() {
+  if (genreModal) return genreModal;
+
+  const overlay = document.createElement("div");
+  overlay.className = "genre-modal-overlay";
+  overlay.innerHTML = `
+    <div class="genre-modal" role="dialog" aria-modal="true" aria-labelledby="genre-modal-title">
+      <div class="genre-modal-header">
+        <div id="genre-modal-title" class="genre-modal-title">Select genres</div>
+        <button class="genre-modal-close" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="genre-modal-body"></div>
+      <div class="genre-modal-actions">
+        <button class="genre-modal-btn ghost" type="button">Cancel</button>
+        <button class="genre-modal-btn primary" type="button">OK</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const body = overlay.querySelector(".genre-modal-body");
+  const closeBtn = overlay.querySelector(".genre-modal-close");
+  const cancelBtn = overlay.querySelector(".genre-modal-btn.ghost");
+  const okBtn = overlay.querySelector(".genre-modal-btn.primary");
+
+  const list = document.getElementById("filter-genres");
+  body.appendChild(list);
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeGenreModal("cancel");
+  });
+  closeBtn.addEventListener("click", () => closeGenreModal("cancel"));
+  cancelBtn.addEventListener("click", () => closeGenreModal("cancel"));
+  okBtn.addEventListener("click", () => closeGenreModal("ok"));
+
+  document.addEventListener("keydown", (e) => {
+    if (overlay.classList.contains("open") && e.key === "Escape") {
+      closeGenreModal("cancel");
+    }
+  });
+
+  genreModal = { overlay, list, prevSelection: new Set() };
+  return genreModal;
+}
+
+function openGenreModal() {
+  const modal = createGenreModal();
+  modal.prevSelection = new Set(activeGenres);
+  syncGenreCheckboxes(activeGenres);
+  modal.overlay.classList.add("open");
+}
+
+function closeGenreModal(action) {
+  const modal = genreModal;
+  if (!modal) return;
+
+  if (action === "ok") {
+    activeGenres = getCheckedGenres();
+    updateGenreLabel();
+  } else {
+    syncGenreCheckboxes(modal.prevSelection);
+  }
+
+  modal.overlay.classList.remove("open");
+}
+
+function getCheckedGenres() {
+  const selected = new Set();
+  if (!genreModal) return selected;
+
+  genreModal.list
+    .querySelectorAll("input[type=\"checkbox\"]")
+    .forEach(cb => {
+      if (cb.checked) selected.add(cb.value);
+    });
+
+  return selected;
+}
+
+function syncGenreCheckboxes(selectedSet) {
+  if (!genreModal) return;
+
+  genreModal.list
+    .querySelectorAll("input[type=\"checkbox\"]")
+    .forEach(cb => {
+      cb.checked = selectedSet.has(cb.value);
+    });
 }
 
 // ===============================

@@ -14,12 +14,52 @@
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-#player .splide__slide img {
+#player .station-card {
   width: min(33vw, 100vh);
-  height: auto;
+  aspect-ratio: 2 / 3;
   border-radius: 18px;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   user-select: none;
-  aspect-ratio: 1 / 1;
+}
+
+#player .station-logo {
+  flex: 0 0 66.6667%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+#player .station-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+#player .station-name {
+  flex: 0 0 33.3333%;
+  padding: 12px;
+  box-sizing: border-box;
+  min-height: 0;
+  font-size: clamp(12px, 1.8vw, 18px);
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-overflow: ellipsis;
 }
 
 .splide__slide.is-active {
@@ -32,11 +72,11 @@
   opacity: 0.8;
 }
 
-.splide__slide.is-active.playing {
+.splide__slide.is-active.playing .station-card {
   box-shadow: 0 0 30px rgba(0, 255, 120, 0.9);
 }
 
-.splide__slide.is-active.paused {
+.splide__slide.is-active.paused .station-card {
   box-shadow: 0 0 30px rgba(255, 80, 80, 0.9);
 }
 
@@ -96,4 +136,10 @@
 
 #player:fullscreen .splide {
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  #player .station-name {
+    padding-top: 6px;
+  }
 }

@@ -105,7 +105,26 @@ function buildCarousel() {
   stations.forEach(station => {
     const li = document.createElement("li");
     li.className = "splide__slide";
-    li.innerHTML = `<img src="${station.image}" alt="${station.name}" />`;
+
+    const card = document.createElement("div");
+    card.className = "station-card";
+
+    const logoWrap = document.createElement("div");
+    logoWrap.className = "station-logo";
+
+    const logo = document.createElement("img");
+    logo.src = station.image;
+    logo.alt = station.name;
+
+    const name = document.createElement("div");
+    name.className = "station-name";
+    name.textContent = station.name;
+
+    logoWrap.appendChild(logo);
+    card.appendChild(logoWrap);
+    card.appendChild(name);
+    li.appendChild(card);
+
     stationList.appendChild(li);
   });
 
