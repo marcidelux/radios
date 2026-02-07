@@ -56,6 +56,7 @@ export function getFavorites() {
 }
 
 // Active filter state
+let activeName = "";
 let activeCountry = "";
 let activeTags = new Set();
 
@@ -63,6 +64,31 @@ let activeTags = new Set();
 let pageSize = loadPageSize();
 let currentPage = 1;
 let filteredStations = []; // result after applying filters
+
+function normalizeForSearch(value) {
+  return (value || "")
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function initFavoritesVisibilityToggle() {
+  const section = document.getElementById("favorites");
+  const toggleBtn = document.getElementById("toggle-favorites");
+  if (!section || !toggleBtn) return;
+
+  const syncLabel = () => {
+    toggleBtn.textContent = section.classList.contains("collapsed") ? "Show" : "Hide";
+  };
+
+  toggleBtn.addEventListener("click", () => {
+    section.classList.toggle("collapsed");
+    syncLabel();
+  });
+
+  syncLabel();
+}
 
 // ===============================
 // INITIALIZATION
@@ -90,7 +116,10 @@ async function initFavorites() {
   });
 
   // Build filter UI
+  initFavoritesVisibilityToggle();
+  initNameFilter();
   buildCountryFilter();
+  initCountryFilter();
   buildTagFilter();
   initTagDropdown();
 
@@ -191,6 +220,31 @@ function buildCountryFilter() {
   });
 }
 
+function initCountryFilter() {
+  const select = document.getElementById("filter-country");
+  if (!select) return;
+
+  select.addEventListener("change", () => {
+    applyFilters();
+  });
+}
+
+function initNameFilter() {
+  const input = document.getElementById("filter-name");
+  if (!input) return;
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    input.blur();
+    applyFilters();
+  });
+
+  input.addEventListener("change", () => {
+    applyFilters();
+  });
+}
+
 function buildTagFilter() {
   const container = document.getElementById("filter-tags");
 
@@ -224,7 +278,7 @@ function updateTagLabel() {
   const tagLabel = document.getElementById("tag-label");
 
   if (activeTags.size === 0) {
-    tagLabel.textContent = "tags";
+    tagLabel.textContent = "Tags";
   } else if (activeTags.size === 1) {
     tagLabel.textContent = [...activeTags][0];
   } else {
@@ -251,6 +305,7 @@ function createTagModal() {
       </div>
       <div class="tag-modal-body"></div>
       <div class="tag-modal-actions">
+        <button class="tag-modal-btn clear" type="button">Clear</button>
         <button class="tag-modal-btn ghost" type="button">Cancel</button>
         <button class="tag-modal-btn primary" type="button">OK</button>
       </div>
@@ -261,6 +316,7 @@ function createTagModal() {
 
   const body = overlay.querySelector(".tag-modal-body");
   const closeBtn = overlay.querySelector(".tag-modal-close");
+  const clearBtn = overlay.querySelector(".tag-modal-btn.clear");
   const cancelBtn = overlay.querySelector(".tag-modal-btn.ghost");
   const okBtn = overlay.querySelector(".tag-modal-btn.primary");
 
@@ -271,6 +327,7 @@ function createTagModal() {
     if (e.target === overlay) closeTagModal("cancel");
   });
   closeBtn.addEventListener("click", () => closeTagModal("cancel"));
+  clearBtn.addEventListener("click", () => closeTagModal("clear"));
   cancelBtn.addEventListener("click", () => closeTagModal("cancel"));
   okBtn.addEventListener("click", () => closeTagModal("ok"));
 
@@ -295,9 +352,13 @@ function closeTagModal(action) {
   const modal = tagModal;
   if (!modal) return;
 
-  if (action === "ok") {
+  if (action === "clear") {
+    syncTagCheckboxes(new Set());
+    return;
+  } else if (action === "ok") {
     activeTags = getCheckedTags();
     updateTagLabel();
+    applyFilters();
   } else {
     syncTagCheckboxes(modal.prevSelection);
   }
@@ -332,14 +393,22 @@ function syncTagCheckboxes(selectedSet) {
 // FILTER APPLY
 // ===============================
 
-document.getElementById("filter-apply").addEventListener("click", applyFilters);
-
 function applyFilters() {
   // Requirement: refilter stops preview playback
   stopPreviewPlayback();
+
+  activeName = normalizeForSearch(
+    (document.getElementById("filter-name")?.value || "").trim()
+  );
   activeCountry = document.getElementById("filter-country").value || "";
 
   filteredStations = allStations.filter(station => {
+    // Name filter (partial, case-insensitive)
+    if (activeName) {
+      const stationName = normalizeForSearch(station.name);
+      if (!stationName.includes(activeName)) return false;
+    }
+
     // Country filter
     if (activeCountry && station.country !== activeCountry) return false;
 

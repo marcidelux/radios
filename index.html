@@ -37,9 +37,19 @@
 
   <!-- ⭐ FAVORITES -->
   <section id="favorites">
-    <h2>Stations</h2>
+    <div class="favorites-header">
+      <h2>Stations</h2>
+      <button id="toggle-favorites" type="button">Hide</button>
+    </div>
 
     <div id="station-filters">
+      <input
+        id="filter-name"
+        type="text"
+        placeholder="Name"
+        autocomplete="off"
+      />
+
       <select id="filter-country">
         <option value="">All countries</option>
       </select>
@@ -50,8 +60,6 @@
         </div>
         <div class="multiselect-options" id="filter-tags"></div>
       </div>
-
-      <button id="filter-apply">Search</button>
     </div>
 
     <div id="favorites-container"></div>

@@ -1,7 +1,7 @@
 [
   {
     "id": "HU_001",
-    "name": "Győr+ Rádió",
+    "name": "Győr+",
     "country": "HU",
     "tags": [
       "classical",
@@ -14,7 +14,7 @@
   },
   {
     "id": "HU_002",
-    "name": "AdventNet rádió",
+    "name": "AdventNet",
     "country": "HU",
     "tags": [
       "christian",
@@ -26,7 +26,7 @@
   },
   {
     "id": "HU_003",
-    "name": "Aktív Rádió",
+    "name": "Aktív",
     "country": "HU",
     "tags": [
       "pop"
@@ -36,7 +36,7 @@
   },
   {
     "id": "HU_004",
-    "name": "Argentine Tango Radio",
+    "name": "Argentine Tango",
     "country": "HU",
     "tags": [
       "tango"
@@ -46,7 +46,7 @@
   },
   {
     "id": "HU_005",
-    "name": "BALATONICA RADIO",
+    "name": "BALATONICA",
     "country": "HU",
     "tags": [
       "chillout",
@@ -182,7 +182,7 @@
   },
   {
     "id": "HU_016",
-    "name": "Chiqui Radio",
+    "name": "Chiqui",
     "country": "HU",
     "tags": [
       "breakbeat",
@@ -437,7 +437,7 @@
   },
   {
     "id": "HU_038",
-    "name": "Danubius Rádió",
+    "name": "Danubius",
     "country": "HU",
     "tags": [
       "pop"
@@ -447,7 +447,7 @@
   },
   {
     "id": "HU_039",
-    "name": "Danubius Radio",
+    "name": "Danubius",
     "country": "HU",
     "tags": [
       "2000s",
@@ -459,7 +459,7 @@
   },
   {
     "id": "HU_040",
-    "name": "Deja Vu Radio",
+    "name": "Deja Vu",
     "country": "HU",
     "tags": [
       "00s",
@@ -475,7 +475,7 @@
   },
   {
     "id": "HU_041",
-    "name": "Duna World Rádió",
+    "name": "Duna World",
     "country": "HU",
     "tags": [
       "duna média",
@@ -498,7 +498,7 @@
   },
   {
     "id": "HU_043",
-    "name": "Európa Rádió Miskolc",
+    "name": "Európa Miskolc",
     "country": "HU",
     "tags": [
       "christian",
@@ -543,7 +543,7 @@
   },
   {
     "id": "HU_047",
-    "name": "Gong Rádió",
+    "name": "Gong",
     "country": "HU",
     "tags": [
       "pop"
@@ -651,7 +651,7 @@
   },
   {
     "id": "HU_057",
-    "name": "Laza Rádió - Mulatós",
+    "name": "Laza - Mulatós",
     "country": "HU",
     "tags": [
       "folk"
@@ -661,7 +661,7 @@
   },
   {
     "id": "HU_058",
-    "name": "Lépés Rádió",
+    "name": "Lépés",
     "country": "HU",
     "tags": [
       "news",
@@ -688,7 +688,7 @@
   },
   {
     "id": "HU_060",
-    "name": "Luxfunk Radio",
+    "name": "Luxfunk",
     "country": "HU",
     "tags": [
       "breakbeat",
@@ -702,7 +702,7 @@
   },
   {
     "id": "HU_061",
-    "name": "Magyar Evangéliumi Rádió",
+    "name": "Magyar Evangéliumi",
     "country": "HU",
     "tags": [
       "christian",
@@ -724,7 +724,7 @@
   },
   {
     "id": "HU_063",
-    "name": "Mercy Rádió",
+    "name": "Mercy",
     "country": "HU",
     "tags": [
       "hits",
@@ -735,7 +735,7 @@
   },
   {
     "id": "HU_064",
-    "name": "Mercy Rádió - Kabaré",
+    "name": "Mercy - Kabaré",
     "country": "HU",
     "tags": [
       "comedy",
@@ -759,7 +759,7 @@
   },
   {
     "id": "HU_066",
-    "name": "MR8 - Duna World Rádió",
+    "name": "MR8 - Duna World",
     "country": "HU",
     "tags": [
       "news",
@@ -771,7 +771,7 @@
   },
   {
     "id": "HU_067",
-    "name": "Nemzeti Sport Radio",
+    "name": "Nemzeti Sport",
     "country": "HU",
     "tags": [
       "entertainment",
@@ -925,7 +925,7 @@
   },
   {
     "id": "HU_080",
-    "name": "Petőfi Rádió",
+    "name": "Petőfi",
     "country": "HU",
     "tags": [
       "alternative",
@@ -950,7 +950,7 @@
   },
   {
     "id": "HU_082",
-    "name": "Rádió 1",
+    "name": "Rádio 1",
     "country": "HU",
     "tags": [
       "dance"
@@ -960,7 +960,7 @@
   },
   {
     "id": "HU_083",
-    "name": "Rádió 1 - Békéscsaba",
+    "name": "Rádio 1 - Békéscsaba",
     "country": "HU",
     "tags": [
       "dance",
@@ -972,7 +972,7 @@
   },
   {
     "id": "HU_084",
-    "name": "Rádió 1 - Sopron",
+    "name": "Rádio 1 - Sopron",
     "country": "HU",
     "tags": [
       "dance",
@@ -985,7 +985,7 @@
   },
   {
     "id": "HU_085",
-    "name": "Rádió 1 Debrecen",
+    "name": "Rádio 1 Debrecen",
     "country": "HU",
     "tags": [
       "pop"
@@ -995,7 +995,7 @@
   },
   {
     "id": "HU_086",
-    "name": "Rádió 47",
+    "name": "47",
     "country": "HU",
     "tags": [
       "pop"
@@ -1005,7 +1005,7 @@
   },
   {
     "id": "HU_087",
-    "name": "Rádió 88 Club",
+    "name": "88 Club",
     "country": "HU",
     "tags": [
       "dance"
@@ -1015,7 +1015,7 @@
   },
   {
     "id": "HU_088",
-    "name": "Rádió 88 Retro",
+    "name": "88 Retro",
     "country": "HU",
     "tags": [
       "hits",
@@ -1026,7 +1026,7 @@
   },
   {
     "id": "HU_089",
-    "name": "Rádió 88 Top",
+    "name": "88 Top",
     "country": "HU",
     "tags": [
       "contemporary hits",
@@ -1037,7 +1037,7 @@
   },
   {
     "id": "HU_090",
-    "name": "Rádió Antritt",
+    "name": "Antritt",
     "country": "HU",
     "tags": [
       "00s",
@@ -1051,7 +1051,7 @@
   },
   {
     "id": "HU_091",
-    "name": "Radio Sunrise",
+    "name": "Sunrise",
     "country": "HU",
     "tags": [
       "dance",
@@ -1087,7 +1087,7 @@
   },
   {
     "id": "HU_094",
-    "name": "Reménység Hangja Rádió",
+    "name": "Reménység Hangja",
     "country": "HU",
     "tags": [
       "adventist",
@@ -1100,7 +1100,7 @@
   },
   {
     "id": "HU_095",
-    "name": "Retro Rádió",
+    "name": "Retro",
     "country": "HU",
     "tags": [
       "pop",
@@ -1171,7 +1171,7 @@
   },
   {
     "id": "HU_101",
-    "name": "Roxy Rádió",
+    "name": "Roxy",
     "country": "HU",
     "tags": [
       "contemporary hits",
@@ -1194,7 +1194,7 @@
   },
   {
     "id": "HU_103",
-    "name": "Sola Rádió",
+    "name": "Sola",
     "country": "HU",
     "tags": [
       "christian",
@@ -1218,7 +1218,7 @@
   },
   {
     "id": "HU_105",
-    "name": "Szent István Rádió",
+    "name": "Szent István",
     "country": "HU",
     "tags": [
       "christian",
@@ -1230,7 +1230,7 @@
   },
   {
     "id": "HU_106",
-    "name": "Szent Korona Rádió",
+    "name": "Szent Korona",
     "country": "HU",
     "tags": [
       "heavy metal",
@@ -1242,7 +1242,7 @@
   },
   {
     "id": "HU_107",
-    "name": "Szent Korona Rádió - Forrás",
+    "name": "Szent Korona - Forrás",
     "country": "HU",
     "tags": [
       "hungarian ethno music",
@@ -1253,7 +1253,7 @@
   },
   {
     "id": "HU_108",
-    "name": "Tilos Rádió",
+    "name": "Tilos",
     "country": "HU",
     "tags": [
       "alternative",
@@ -1267,7 +1267,7 @@
   },
   {
     "id": "HU_109",
-    "name": "Youventus Rádió",
+    "name": "Youventus",
     "country": "HU",
     "tags": [
       "pop"
@@ -1277,7 +1277,7 @@
   },
   {
     "id": "HU_110",
-    "name": "Zalan Radio",
+    "name": "Zalan",
     "country": "HU",
     "tags": [
       "house"
