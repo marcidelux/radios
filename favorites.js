@@ -70,40 +70,80 @@ let filteredStations = []; // result after applying filters
 
 console.log("[INIT] Favorites component starting...");
 
-fetch("stations.json")
-  .then(res => res.json())
-  .then(data => {
-    console.log("[INIT] stations.json loaded");
+initFavorites().catch(err => {
+  console.error("[INIT] Failed to load catalog", err);
+});
 
-    catalog = data;
-    allStations = data.stations;
-    countries = data.countries;
-    genres = data.genres;
+async function initFavorites() {
+  const data = await loadCatalog();
+  console.log("[INIT] catalog loaded");
 
-    // Build fast lookup
-    stationsById.clear();
-    allStations.forEach(st => {
-      stationsById.set(st.id, st);
-    });
+  catalog = data;
+  allStations = data.stations;
+  countries = data.countries;
+  genres = data.genres;
 
-    // Build filter UI
-    buildCountryFilter();
-    buildGenreFilter();
-    initGenreDropdown();
-
-    // Initial favorites from storage (source of truth)
-    rebuildFavoritesFromStorageAndNotify(true);
-
-    // Initial table = all stations (unfiltered)
-    filteredStations = allStations;
-    currentPage = 1;
-    renderCurrentPage();
-
-    console.log("[INIT] Favorites ready");
-  })
-  .catch(err => {
-    console.error("[INIT] Failed to load stations.json", err);
+  // Build fast lookup
+  stationsById.clear();
+  allStations.forEach(st => {
+    stationsById.set(st.id, st);
   });
+
+  // Build filter UI
+  buildCountryFilter();
+  buildGenreFilter();
+  initGenreDropdown();
+
+  // Initial favorites from storage (source of truth)
+  rebuildFavoritesFromStorageAndNotify(true);
+
+  // Initial table = all stations (unfiltered)
+  filteredStations = allStations;
+  currentPage = 1;
+  renderCurrentPage();
+
+  console.log("[INIT] Favorites ready");
+}
+
+async function loadCatalog() {
+  const configRes = await fetch("config.json");
+  if (!configRes.ok) {
+    throw new Error(`config.json load failed (${configRes.status})`);
+  }
+  const config = await configRes.json();
+
+  const indexRes = await fetch("stations/index.json");
+  if (!indexRes.ok) {
+    throw new Error(`stations/index.json load failed (${indexRes.status})`);
+  }
+  const stationFiles = await indexRes.json();
+  if (!Array.isArray(stationFiles)) {
+    throw new Error("stations/index.json must be an array of filenames");
+  }
+
+  const stationGroups = await Promise.all(
+    stationFiles.map(async (file) => {
+      const res = await fetch(`stations/${file}`);
+      if (!res.ok) {
+        throw new Error(`stations/${file} load failed (${res.status})`);
+      }
+
+      const parsed = await res.json();
+      if (!Array.isArray(parsed)) {
+        throw new Error(`stations/${file} must be an array`);
+      }
+
+      return parsed;
+    })
+  );
+
+  return {
+    meta: config.meta || {},
+    countries: config.countries || {},
+    genres: config.genres || {},
+    stations: stationGroups.flat(),
+  };
+}
 
 // ===============================
 // STORAGE
@@ -341,7 +381,7 @@ function renderPagination(totalPages) {
   const sizeSelect = document.createElement("select");
   sizeSelect.className = "page-size-select";
 
-  [3, 10, 20, 50, 100].forEach(size => {
+  [10, 20, 50, 100].forEach(size => {
     const opt = document.createElement("option");
     opt.value = size;
     opt.textContent = `${size} / page`;
@@ -486,12 +526,13 @@ function buildTable(stations) {
 
   stations.forEach(station => {
     const isChecked = storedIds.has(station.id);
+    const countryMeta = countries[station.country] || { flag: "", name: station.country || "" };
 
     const row = document.createElement("tr");
     row.dataset.stationId = station.id;
 
     row.innerHTML = `
-      <td>${countries[station.country].flag} ${station.name}</td>
+      <td>${countryMeta.flag} ${station.name}</td>
       <td><img src="${station.image}" alt="${station.name}" /></td>
       <td><input type="checkbox" ${isChecked ? "checked" : ""} /></td>
     `;

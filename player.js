@@ -22,7 +22,7 @@ let previewStation = null;
 window.addEventListener("DOMContentLoaded", () => {
   console.log("[PLAYER] DOM ready, waiting for favorites to load...");
   // Do NOT build here. favorites.js will dispatch "favorites-changed"
-  // after it fetches stations.json + rebuilds the favorites list. :contentReference[oaicite:2]{index=2}
+  // after it loads the catalog + rebuilds the favorites list.
 });
 
 window.addEventListener("favorites-changed", () => {

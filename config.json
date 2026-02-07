@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "version": "1.0",
+    "updated": "2026-01-01"
+  },
+  "countries": {
+    "HU": {
+      "name": "Hungary",
+      "flag": "🇭🇺"
+    },
+    "UK": {
+      "name": "United Kingdom",
+      "flag": "🇬🇧"
+    },
+    "FR": {
+      "name": "France",
+      "flag": "🇫🇷"
+    }
+  },
+  "genres": {
+    "00s": {
+      "label": "00s"
+    },
+    "2000s": {
+      "label": "2000s"
+    },
+    "80's": {
+      "label": "80's"
+    },
+    "80s": {
+      "label": "80s"
+    },
+    "90's": {
+      "label": "90's"
+    },
+    "90s": {
+      "label": "90s"
+    },
+    "acoustic": {
+      "label": "acoustic"
+    },
+    "adult contemporary": {
+      "label": "adult contemporary"
+    },
+    "adventist": {
+      "label": "adventist"
+    },
+    "all-time favourites": {
+      "label": "all-time favourites"
+    },
+    "alternative": {
+      "label": "alternative"
+    },
+    "alternative rock": {
+      "label": "alternative rock"
+    },
+    "anthems": {
+      "label": "anthems"
+    },
+    "blues": {
+      "label": "blues"
+    },
+    "breakbeat": {
+      "label": "breakbeat"
+    },
+    "breakbeat hardcore": {
+      "label": "breakbeat hardcore"
+    },
+    "buddhism": {
+      "label": "buddhism"
+    },
+    "children": {
+      "label": "children"
+    },
+    "chill": {
+      "label": "chill"
+    },
+    "chillout": {
+      "label": "chillout"
+    },
+    "christian": {
+      "label": "christian"
+    },
+    "christmas": {
+      "label": "christmas"
+    },
+    "christmas music": {
+      "label": "christmas music"
+    },
+    "classic": {
+      "label": "classic"
+    },
+    "classic hits": {
+      "label": "classic hits"
+    },
+    "classic rock": {
+      "label": "classic rock"
+    },
+    "classical": {
+      "label": "classical"
+    },
+    "classics": {
+      "label": "classics"
+    },
+    "club": {
+      "label": "club"
+    },
+    "comedy": {
+      "label": "comedy"
+    },
+    "community": {
+      "label": "community"
+    },
+    "contemporary hits": {
+      "label": "contemporary hits"
+    },
+    "cultural": {
+      "label": "cultural"
+    },
+    "dance": {
+      "label": "dance"
+    },
+    "deep house": {
+      "label": "deep house"
+    },
+    "duna média": {
+      "label": "duna média"
+    },
+    "easy listening": {
+      "label": "easy listening"
+    },
+    "edm": {
+      "label": "edm"
+    },
+    "electronic": {
+      "label": "electronic"
+    },
+    "entertainment": {
+      "label": "entertainment"
+    },
+    "eurodance": {
+      "label": "eurodance"
+    },
+    "film score": {
+      "label": "film score"
+    },
+    "folk": {
+      "label": "folk"
+    },
+    "folk music": {
+      "label": "folk music"
+    },
+    "folklore": {
+      "label": "folklore"
+    },
+    "free": {
+      "label": "free"
+    },
+    "freeform": {
+      "label": "freeform"
+    },
+    "funky": {
+      "label": "funky"
+    },
+    "groove": {
+      "label": "groove"
+    },
+    "guitar": {
+      "label": "guitar"
+    },
+    "guitar rock": {
+      "label": "guitar rock"
+    },
+    "happy hardcore": {
+      "label": "happy hardcore"
+    },
+    "happy music": {
+      "label": "happy music"
+    },
+    "hardcore": {
+      "label": "hardcore"
+    },
+    "heavy metal": {
+      "label": "heavy metal"
+    },
+    "hip-hop": {
+      "label": "hip-hop"
+    },
+    "hiphop": {
+      "label": "hiphop"
+    },
+    "hits": {
+      "label": "hits"
+    },
+    "holiday": {
+      "label": "holiday"
+    },
+    "house": {
+      "label": "house"
+    },
+    "hungarian ethno music": {
+      "label": "hungarian ethno music"
+    },
+    "hungarian folk music": {
+      "label": "hungarian folk music"
+    },
+    "hungarian pop music": {
+      "label": "hungarian pop music"
+    },
+    "independent": {
+      "label": "independent"
+    },
+    "indie": {
+      "label": "indie"
+    },
+    "indie rock": {
+      "label": "indie rock"
+    },
+    "italo": {
+      "label": "italo"
+    },
+    "jazz": {
+      "label": "jazz"
+    },
+    "katholic": {
+      "label": "katholic"
+    },
+    "katoliški": {
+      "label": "katoliški"
+    },
+    "lossless": {
+      "label": "lossless"
+    },
+    "lounge": {
+      "label": "lounge"
+    },
+    "love songs": {
+      "label": "love songs"
+    },
+    "metal": {
+      "label": "metal"
+    },
+    "minority": {
+      "label": "minority"
+    },
+    "movie scores": {
+      "label": "movie scores"
+    },
+    "movie soundtracks": {
+      "label": "movie soundtracks"
+    },
+    "music": {
+      "label": "music"
+    },
+    "news": {
+      "label": "news"
+    },
+    "oldies": {
+      "label": "oldies"
+    },
+    "party": {
+      "label": "party"
+    },
+    "politics": {
+      "label": "politics"
+    },
+    "pop": {
+      "label": "pop"
+    },
+    "pop dance": {
+      "label": "pop dance"
+    },
+    "pop rock": {
+      "label": "pop rock"
+    },
+    "progressive rock": {
+      "label": "progressive rock"
+    },
+    "protestant": {
+      "label": "protestant"
+    },
+    "psychedelic": {
+      "label": "psychedelic"
+    },
+    "psychill": {
+      "label": "psychill"
+    },
+    "psytrance": {
+      "label": "psytrance"
+    },
+    "public": {
+      "label": "public"
+    },
+    "r'n'b": {
+      "label": "r'n'b"
+    },
+    "rap": {
+      "label": "rap"
+    },
+    "religion": {
+      "label": "religion"
+    },
+    "religious": {
+      "label": "religious"
+    },
+    "remix": {
+      "label": "remix"
+    },
+    "retro": {
+      "label": "retro"
+    },
+    "rnb": {
+      "label": "rnb"
+    },
+    "rock": {
+      "label": "rock"
+    },
+    "romantic": {
+      "label": "romantic"
+    },
+    "smooth jazz": {
+      "label": "smooth jazz"
+    },
+    "soul": {
+      "label": "soul"
+    },
+    "soundtrack": {
+      "label": "soundtrack"
+    },
+    "soundtracks": {
+      "label": "soundtracks"
+    },
+    "spirituality": {
+      "label": "spirituality"
+    },
+    "sport": {
+      "label": "sport"
+    },
+    "sports": {
+      "label": "sports"
+    },
+    "summer": {
+      "label": "summer"
+    },
+    "talk": {
+      "label": "talk"
+    },
+    "tango": {
+      "label": "tango"
+    },
+    "top": {
+      "label": "top"
+    },
+    "top 40": {
+      "label": "top 40"
+    },
+    "top charts": {
+      "label": "top charts"
+    },
+    "top hits": {
+      "label": "top hits"
+    },
+    "top40": {
+      "label": "top40"
+    },
+    "trance": {
+      "label": "trance"
+    },
+    "university": {
+      "label": "university"
+    },
+    "variety": {
+      "label": "variety"
+    },
+    "various": {
+      "label": "various"
+    }
+  }
+}
