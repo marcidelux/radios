@@ -65,7 +65,7 @@ input[type="checkbox"] {
 }
 
 /* ===============================
-   MULTISELECT (GENRES)
+   MULTISELECT (TAGS)
 =============================== */
 
 .multiselect {
@@ -117,10 +117,10 @@ input[type="checkbox"] {
 }
 
 /* ===============================
-   GENRE MODAL
+   TAG MODAL
 =============================== */
 
-.genre-modal-overlay {
+.tag-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -130,11 +130,11 @@ input[type="checkbox"] {
   z-index: 50;
 }
 
-.genre-modal-overlay.open {
+.tag-modal-overlay.open {
   display: flex;
 }
 
-.genre-modal {
+.tag-modal {
   width: min(560px, 92vw);
   max-height: 70vh;
   background: #111;
@@ -145,7 +145,7 @@ input[type="checkbox"] {
   flex-direction: column;
 }
 
-.genre-modal-header {
+.tag-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -153,11 +153,11 @@ input[type="checkbox"] {
   border-bottom: 1px solid #2a2a2a;
 }
 
-.genre-modal-title {
+.tag-modal-title {
   font-weight: 600;
 }
 
-.genre-modal-close {
+.tag-modal-close {
   background: transparent;
   color: #fff;
   border: 1px solid #333;
@@ -166,12 +166,12 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.genre-modal-body {
+.tag-modal-body {
   padding: 12px 14px;
   overflow: auto;
 }
 
-.genre-modal-body .multiselect-options {
+.tag-modal-body .multiselect-options {
   display: block;
   position: static;
   background: transparent;
@@ -180,7 +180,7 @@ input[type="checkbox"] {
   max-height: none;
 }
 
-.genre-modal-body .multiselect-options label {
+.tag-modal-body .multiselect-options label {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -188,7 +188,7 @@ input[type="checkbox"] {
   color: #fff;
 }
 
-.genre-modal-actions {
+.tag-modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
@@ -196,7 +196,7 @@ input[type="checkbox"] {
   border-top: 1px solid #2a2a2a;
 }
 
-.genre-modal-btn {
+.tag-modal-btn {
   padding: 6px 12px;
   border-radius: 6px;
   border: 1px solid #444;
@@ -205,7 +205,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.genre-modal-btn.primary {
+.tag-modal-btn.primary {
   background: #fff;
   color: #000;
   border-color: #fff;

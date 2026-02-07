@@ -3,7 +3,7 @@
     "id": "HU_001",
     "name": "Győr+ Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "classical",
       "comedy",
       "news",
@@ -16,7 +16,7 @@
     "id": "HU_002",
     "name": "AdventNet rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "christian",
       "cultural",
       "religion"
@@ -28,7 +28,7 @@
     "id": "HU_003",
     "name": "Aktív Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop"
     ],
     "image": "pics/HU/HU_003.png",
@@ -38,7 +38,7 @@
     "id": "HU_004",
     "name": "Argentine Tango Radio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "tango"
     ],
     "image": "pics/HU/HU_004.png",
@@ -48,7 +48,7 @@
     "id": "HU_005",
     "name": "BALATONICA RADIO",
     "country": "HU",
-    "genres": [
+    "tags": [
       "chillout",
       "lounge"
     ],
@@ -59,7 +59,7 @@
     "id": "HU_006",
     "name": "Base FM",
     "country": "HU",
-    "genres": [
+    "tags": [
       "hiphop",
       "rap",
       "rnb"
@@ -71,7 +71,7 @@
     "id": "HU_007",
     "name": "BDPST ROCK",
     "country": "HU",
-    "genres": [
+    "tags": [
       "alternative rock",
       "classic rock",
       "indie rock",
@@ -88,7 +88,7 @@
     "id": "HU_008",
     "name": "Best FM - Budapest",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adult contemporary",
       "news",
       "top hits"
@@ -100,7 +100,7 @@
     "id": "HU_009",
     "name": "Best FM - Debrecen",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adult contemporary",
       "news",
       "top hits"
@@ -112,7 +112,7 @@
     "id": "HU_010",
     "name": "Best FM - Eger",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adult contemporary",
       "news",
       "top hits"
@@ -124,7 +124,7 @@
     "id": "HU_011",
     "name": "Best FM - Pécs",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adult contemporary",
       "news",
       "top hits"
@@ -136,7 +136,7 @@
     "id": "HU_012",
     "name": "Best FM - Székesfehérvár",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adult contemporary",
       "news",
       "top hits"
@@ -148,7 +148,7 @@
     "id": "HU_013",
     "name": "Best FM - Szolnok",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adult contemporary",
       "news",
       "top hits"
@@ -160,7 +160,7 @@
     "id": "HU_014",
     "name": "Best FM - Zalaegerszeg",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adult contemporary",
       "news",
       "top hits"
@@ -172,7 +172,7 @@
     "id": "HU_015",
     "name": "Buddha FM",
     "country": "HU",
-    "genres": [
+    "tags": [
       "buddhism",
       "religion",
       "spirituality"
@@ -184,7 +184,7 @@
     "id": "HU_016",
     "name": "Chiqui Radio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "breakbeat",
       "breakbeat hardcore",
       "happy hardcore",
@@ -198,7 +198,7 @@
     "id": "HU_017",
     "name": "Cool FM",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop",
       "university"
     ],
@@ -209,7 +209,7 @@
     "id": "HU_018",
     "name": "Cool FM - Goldie'S",
     "country": "HU",
-    "genres": [
+    "tags": [
       "classic hits",
       "university"
     ],
@@ -220,7 +220,7 @@
     "id": "HU_019",
     "name": "Cool FM - kultX",
     "country": "HU",
-    "genres": [
+    "tags": [
       "alternative",
       "pop",
       "university"
@@ -232,7 +232,7 @@
     "id": "HU_020",
     "name": "Cool FM - Xbeat",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "university"
     ],
@@ -243,7 +243,7 @@
     "id": "HU_021",
     "name": "Cool.FM DANCE 2000's",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "retro"
     ],
@@ -254,7 +254,7 @@
     "id": "HU_022",
     "name": "Cool.FM PARTY Hits",
     "country": "HU",
-    "genres": [
+    "tags": [
       "hits",
       "party"
     ],
@@ -265,7 +265,7 @@
     "id": "HU_023",
     "name": "Cool.FM REMIX MUSIC",
     "country": "HU",
-    "genres": [
+    "tags": [
       "remix"
     ],
     "image": "pics/HU/HU_023.png",
@@ -275,7 +275,7 @@
     "id": "HU_024",
     "name": "COOLFM (Classic) Rock",
     "country": "HU",
-    "genres": [
+    "tags": [
       "classic rock",
       "rock"
     ],
@@ -286,7 +286,7 @@
     "id": "HU_025",
     "name": "COOLFM Acoustic",
     "country": "HU",
-    "genres": [
+    "tags": [
       "acoustic",
       "guitar",
       "guitar rock"
@@ -298,7 +298,7 @@
     "id": "HU_026",
     "name": "COOLFM Best Hits EVER",
     "country": "HU",
-    "genres": [
+    "tags": [
       "top charts",
       "top hits",
       "top40"
@@ -310,7 +310,7 @@
     "id": "HU_027",
     "name": "COOLFM Bside/Alternative",
     "country": "HU",
-    "genres": [
+    "tags": [
       "alternative",
       "alternative rock",
       "indie"
@@ -322,7 +322,7 @@
     "id": "HU_028",
     "name": "COOLFM Filmzenék",
     "country": "HU",
-    "genres": [
+    "tags": [
       "film score",
       "movie scores",
       "movie soundtracks",
@@ -335,7 +335,7 @@
     "id": "HU_029",
     "name": "COOLFM Hazai Kedvencek",
     "country": "HU",
-    "genres": [
+    "tags": [
       "all-time favourites",
       "hungarian pop music",
       "top"
@@ -347,7 +347,7 @@
     "id": "HU_030",
     "name": "COOLFM Jazz",
     "country": "HU",
-    "genres": [
+    "tags": [
       "jazz",
       "smooth jazz"
     ],
@@ -358,7 +358,7 @@
     "id": "HU_031",
     "name": "COOLFM Karácsonyi Dalok",
     "country": "HU",
-    "genres": [
+    "tags": [
       "christmas music",
       "holiday"
     ],
@@ -369,7 +369,7 @@
     "id": "HU_032",
     "name": "COOLFM Love Songs",
     "country": "HU",
-    "genres": [
+    "tags": [
       "easy listening",
       "love songs",
       "romantic"
@@ -381,7 +381,7 @@
     "id": "HU_033",
     "name": "COOLFM Nyári Slágerek",
     "country": "HU",
-    "genres": [
+    "tags": [
       "hits",
       "party",
       "summer"
@@ -393,7 +393,7 @@
     "id": "HU_034",
     "name": "Csukás Meserádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "children"
     ],
     "image": "pics/HU/HU_034.png",
@@ -403,7 +403,7 @@
     "id": "HU_035",
     "name": "DANCE 90'S",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "retro"
     ],
@@ -414,7 +414,7 @@
     "id": "HU_036",
     "name": "Dance Wave Retro!",
     "country": "HU",
-    "genres": [
+    "tags": [
       "90s",
       "dance"
     ],
@@ -425,7 +425,7 @@
     "id": "HU_037",
     "name": "Dance Wave!",
     "country": "HU",
-    "genres": [
+    "tags": [
       "club",
       "dance",
       "electronic",
@@ -439,7 +439,7 @@
     "id": "HU_038",
     "name": "Danubius Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop"
     ],
     "image": "pics/HU/HU_038.png",
@@ -449,7 +449,7 @@
     "id": "HU_039",
     "name": "Danubius Radio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "2000s",
       "80's",
       "90s"
@@ -461,7 +461,7 @@
     "id": "HU_040",
     "name": "Deja Vu Radio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "00s",
       "90s",
       "anthems",
@@ -477,7 +477,7 @@
     "id": "HU_041",
     "name": "Duna World Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "duna média",
       "news",
       "public",
@@ -490,7 +490,7 @@
     "id": "HU_042",
     "name": "Enying FM Hungary",
     "country": "HU",
-    "genres": [
+    "tags": [
       "variety"
     ],
     "image": "pics/HU/HU_042.png",
@@ -500,7 +500,7 @@
     "id": "HU_043",
     "name": "Európa Rádió Miskolc",
     "country": "HU",
-    "genres": [
+    "tags": [
       "christian",
       "protestant",
       "religious"
@@ -512,7 +512,7 @@
     "id": "HU_044",
     "name": "FM 103.9 A Rock",
     "country": "HU",
-    "genres": [
+    "tags": [
       "rock"
     ],
     "image": "pics/HU/HU_044.png",
@@ -522,7 +522,7 @@
     "id": "HU_045",
     "name": "Folkrádio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "folk",
       "folk music",
       "folklore"
@@ -534,7 +534,7 @@
     "id": "HU_046",
     "name": "Friss FM 93.4",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop",
       "music"
     ],
@@ -545,7 +545,7 @@
     "id": "HU_047",
     "name": "Gong Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop"
     ],
     "image": "pics/HU/HU_047.png",
@@ -555,7 +555,7 @@
     "id": "HU_048",
     "name": "Hujujuj",
     "country": "HU",
-    "genres": [
+    "tags": [
       "electronic"
     ],
     "image": "pics/HU/HU_048.png",
@@ -565,7 +565,7 @@
     "id": "HU_049",
     "name": "Inforádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "news",
       "talk"
     ],
@@ -576,7 +576,7 @@
     "id": "HU_050",
     "name": "Jazzy",
     "country": "HU",
-    "genres": [
+    "tags": [
       "jazz"
     ],
     "image": "pics/HU/HU_050.png",
@@ -586,7 +586,7 @@
     "id": "HU_051",
     "name": "Jazzy Cool",
     "country": "HU",
-    "genres": [
+    "tags": [
       "jazz",
       "smooth jazz"
     ],
@@ -597,7 +597,7 @@
     "id": "HU_052",
     "name": "Jazzy Groove",
     "country": "HU",
-    "genres": [
+    "tags": [
       "groove",
       "smooth jazz"
     ],
@@ -608,7 +608,7 @@
     "id": "HU_053",
     "name": "Jazzy Soul",
     "country": "HU",
-    "genres": [
+    "tags": [
       "jazz",
       "smooth jazz",
       "soul"
@@ -620,7 +620,7 @@
     "id": "HU_054",
     "name": "Juventus",
     "country": "HU",
-    "genres": [
+    "tags": [
       "music"
     ],
     "image": "pics/HU/HU_054.png",
@@ -630,7 +630,7 @@
     "id": "HU_055",
     "name": "Klubrádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "news",
       "politics",
       "talk",
@@ -643,7 +643,7 @@
     "id": "HU_056",
     "name": "Korona Fm100",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop"
     ],
     "image": "pics/HU/HU_056.png",
@@ -653,7 +653,7 @@
     "id": "HU_057",
     "name": "Laza Rádió - Mulatós",
     "country": "HU",
-    "genres": [
+    "tags": [
       "folk"
     ],
     "image": "pics/HU/HU_057.png",
@@ -663,7 +663,7 @@
     "id": "HU_058",
     "name": "Lépés Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "news",
       "pop",
       "retro",
@@ -676,7 +676,7 @@
     "id": "HU_059",
     "name": "Luxfunk Blackmix",
     "country": "HU",
-    "genres": [
+    "tags": [
       "breakbeat",
       "funky",
       "hip-hop",
@@ -690,7 +690,7 @@
     "id": "HU_060",
     "name": "Luxfunk Radio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "breakbeat",
       "funky",
       "hip-hop",
@@ -704,7 +704,7 @@
     "id": "HU_061",
     "name": "Magyar Evangéliumi Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "christian",
       "cultural",
       "religious"
@@ -716,7 +716,7 @@
     "id": "HU_062",
     "name": "MegaMixer",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance"
     ],
     "image": "pics/HU/HU_062.png",
@@ -726,7 +726,7 @@
     "id": "HU_063",
     "name": "Mercy Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "hits",
       "pop"
     ],
@@ -737,7 +737,7 @@
     "id": "HU_064",
     "name": "Mercy Rádió - Kabaré",
     "country": "HU",
-    "genres": [
+    "tags": [
       "comedy",
       "talk"
     ],
@@ -748,7 +748,7 @@
     "id": "HU_065",
     "name": "MR5 - Parlamenti Adások",
     "country": "HU",
-    "genres": [
+    "tags": [
       "jazz",
       "news",
       "politics",
@@ -761,7 +761,7 @@
     "id": "HU_066",
     "name": "MR8 - Duna World Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "news",
       "public",
       "talk"
@@ -773,7 +773,7 @@
     "id": "HU_067",
     "name": "Nemzeti Sport Radio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "entertainment",
       "pop",
       "sport",
@@ -787,7 +787,7 @@
     "id": "HU_068",
     "name": "Nemzetiségi adások",
     "country": "HU",
-    "genres": [
+    "tags": [
       "duna média",
       "minority",
       "public",
@@ -800,7 +800,7 @@
     "id": "HU_069",
     "name": "Oxygen Classic Rock",
     "country": "HU",
-    "genres": [
+    "tags": [
       "classic rock",
       "rock"
     ],
@@ -811,7 +811,7 @@
     "id": "HU_070",
     "name": "Oxygen Classics",
     "country": "HU",
-    "genres": [
+    "tags": [
       "classical",
       "classics"
     ],
@@ -822,7 +822,7 @@
     "id": "HU_071",
     "name": "Oxygen Happy",
     "country": "HU",
-    "genres": [
+    "tags": [
       "happy music",
       "hits"
     ],
@@ -833,7 +833,7 @@
     "id": "HU_072",
     "name": "Oxygen Italo Hits",
     "country": "HU",
-    "genres": [
+    "tags": [
       "classic hits",
       "eurodance",
       "italo",
@@ -846,7 +846,7 @@
     "id": "HU_073",
     "name": "Oxygen Music",
     "country": "HU",
-    "genres": [
+    "tags": [
       "hits",
       "top",
       "various"
@@ -858,7 +858,7 @@
     "id": "HU_074",
     "name": "Oxygen Oldies",
     "country": "HU",
-    "genres": [
+    "tags": [
       "classic hits",
       "oldies"
     ],
@@ -869,7 +869,7 @@
     "id": "HU_075",
     "name": "Oxygen Spencer-Hill",
     "country": "HU",
-    "genres": [
+    "tags": [
       "easy listening",
       "italo",
       "pop dance",
@@ -882,7 +882,7 @@
     "id": "HU_076",
     "name": "Oxygen The 80s Hits",
     "country": "HU",
-    "genres": [
+    "tags": [
       "80's",
       "80s",
       "classic hits"
@@ -894,7 +894,7 @@
     "id": "HU_077",
     "name": "Oxygen The 90s Hits",
     "country": "HU",
-    "genres": [
+    "tags": [
       "90's",
       "90s",
       "classic hits"
@@ -906,7 +906,7 @@
     "id": "HU_078",
     "name": "Oxygen Xmas (320)",
     "country": "HU",
-    "genres": [
+    "tags": [
       "christmas"
     ],
     "image": "pics/HU/HU_078.png",
@@ -916,7 +916,7 @@
     "id": "HU_079",
     "name": "OZONE FM",
     "country": "HU",
-    "genres": [
+    "tags": [
       "top",
       "hits"
     ],
@@ -927,7 +927,7 @@
     "id": "HU_080",
     "name": "Petőfi Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "alternative",
       "duna média",
       "pop",
@@ -940,7 +940,7 @@
     "id": "HU_081",
     "name": "Poptarisznya Blues24",
     "country": "HU",
-    "genres": [
+    "tags": [
       "blues",
       "classic rock",
       "oldies"
@@ -952,7 +952,7 @@
     "id": "HU_082",
     "name": "Rádió 1",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance"
     ],
     "image": "pics/HU/HU_082.png",
@@ -962,7 +962,7 @@
     "id": "HU_083",
     "name": "Rádió 1 - Békéscsaba",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "pop",
       "top 40"
@@ -974,7 +974,7 @@
     "id": "HU_084",
     "name": "Rádió 1 - Sopron",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "hits",
       "pop",
@@ -987,7 +987,7 @@
     "id": "HU_085",
     "name": "Rádió 1 Debrecen",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop"
     ],
     "image": "pics/HU/HU_085.png",
@@ -997,7 +997,7 @@
     "id": "HU_086",
     "name": "Rádió 47",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop"
     ],
     "image": "pics/HU/HU_086.png",
@@ -1007,7 +1007,7 @@
     "id": "HU_087",
     "name": "Rádió 88 Club",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance"
     ],
     "image": "pics/HU/HU_087.png",
@@ -1017,7 +1017,7 @@
     "id": "HU_088",
     "name": "Rádió 88 Retro",
     "country": "HU",
-    "genres": [
+    "tags": [
       "hits",
       "retro"
     ],
@@ -1028,7 +1028,7 @@
     "id": "HU_089",
     "name": "Rádió 88 Top",
     "country": "HU",
-    "genres": [
+    "tags": [
       "contemporary hits",
       "top 40"
     ],
@@ -1039,7 +1039,7 @@
     "id": "HU_090",
     "name": "Rádió Antritt",
     "country": "HU",
-    "genres": [
+    "tags": [
       "00s",
       "80s",
       "90s",
@@ -1053,7 +1053,7 @@
     "id": "HU_091",
     "name": "Radio Sunrise",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "house"
     ],
@@ -1064,7 +1064,7 @@
     "id": "HU_092",
     "name": "RadiOzora Chill",
     "country": "HU",
-    "genres": [
+    "tags": [
       "chill",
       "chillout",
       "psychedelic",
@@ -1077,7 +1077,7 @@
     "id": "HU_093",
     "name": "RadiOzora Trance",
     "country": "HU",
-    "genres": [
+    "tags": [
       "psychedelic",
       "psytrance",
       "trance"
@@ -1089,7 +1089,7 @@
     "id": "HU_094",
     "name": "Reménység Hangja Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "adventist",
       "christian",
       "cultural",
@@ -1102,7 +1102,7 @@
     "id": "HU_095",
     "name": "Retro Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop",
       "rock",
       "retro",
@@ -1117,7 +1117,7 @@
     "id": "HU_096",
     "name": "Rise FM Classic",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "edm",
       "house"
@@ -1129,7 +1129,7 @@
     "id": "HU_097",
     "name": "Rise FM Deep",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "deep house",
       "house"
@@ -1141,7 +1141,7 @@
     "id": "HU_098",
     "name": "Rise FM Hit House",
     "country": "HU",
-    "genres": [
+    "tags": [
       "dance",
       "house"
     ],
@@ -1152,7 +1152,7 @@
     "id": "HU_099",
     "name": "Rise FM R'n'B",
     "country": "HU",
-    "genres": [
+    "tags": [
       "r'n'b",
       "rnb"
     ],
@@ -1163,7 +1163,7 @@
     "id": "HU_100",
     "name": "ROCK FM: 103.9",
     "country": "HU",
-    "genres": [
+    "tags": [
       "rock"
     ],
     "image": "pics/HU/HU_100.png",
@@ -1173,7 +1173,7 @@
     "id": "HU_101",
     "name": "Roxy Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "contemporary hits",
       "top hits"
     ],
@@ -1184,7 +1184,7 @@
     "id": "HU_102",
     "name": "Sláger FM",
     "country": "HU",
-    "genres": [
+    "tags": [
       "80s",
       "90s",
       "classic hits"
@@ -1196,7 +1196,7 @@
     "id": "HU_103",
     "name": "Sola Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "christian",
       "cultural",
       "religious"
@@ -1208,7 +1208,7 @@
     "id": "HU_104",
     "name": "Sunshine FM",
     "country": "HU",
-    "genres": [
+    "tags": [
       "news",
       "top 40",
       "top hits"
@@ -1220,7 +1220,7 @@
     "id": "HU_105",
     "name": "Szent István Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "christian",
       "katholic",
       "katoliški"
@@ -1232,7 +1232,7 @@
     "id": "HU_106",
     "name": "Szent Korona Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "heavy metal",
       "metal",
       "rock"
@@ -1244,7 +1244,7 @@
     "id": "HU_107",
     "name": "Szent Korona Rádió - Forrás",
     "country": "HU",
-    "genres": [
+    "tags": [
       "hungarian ethno music",
       "hungarian folk music"
     ],
@@ -1255,7 +1255,7 @@
     "id": "HU_108",
     "name": "Tilos Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "alternative",
       "community",
       "free",
@@ -1269,7 +1269,7 @@
     "id": "HU_109",
     "name": "Youventus Rádió",
     "country": "HU",
-    "genres": [
+    "tags": [
       "pop"
     ],
     "image": "pics/HU/HU_109.png",
@@ -1279,7 +1279,7 @@
     "id": "HU_110",
     "name": "Zalan Radio",
     "country": "HU",
-    "genres": [
+    "tags": [
       "house"
     ],
     "image": "pics/HU/HU_110.png",

@@ -8,7 +8,7 @@ let allStations = [];
 let stationsById = new Map();
 
 let countries = {};
-let genres = {};
+let tags = {};
 
 let favorites = []; // full station objects (exported to player.js)
 
@@ -57,7 +57,7 @@ export function getFavorites() {
 
 // Active filter state
 let activeCountry = "";
-let activeGenres = new Set();
+let activeTags = new Set();
 
 // Pagination state
 let pageSize = loadPageSize();
@@ -81,7 +81,7 @@ async function initFavorites() {
   catalog = data;
   allStations = data.stations;
   countries = data.countries;
-  genres = data.genres;
+  tags = data.tags;
 
   // Build fast lookup
   stationsById.clear();
@@ -91,8 +91,8 @@ async function initFavorites() {
 
   // Build filter UI
   buildCountryFilter();
-  buildGenreFilter();
-  initGenreDropdown();
+  buildTagFilter();
+  initTagDropdown();
 
   // Initial favorites from storage (source of truth)
   rebuildFavoritesFromStorageAndNotify(true);
@@ -140,7 +140,7 @@ async function loadCatalog() {
   return {
     meta: config.meta || {},
     countries: config.countries || {},
-    genres: config.genres || {},
+    tags: config.tags || {},
     stations: stationGroups.flat(),
   };
 }
@@ -191,10 +191,10 @@ function buildCountryFilter() {
   });
 }
 
-function buildGenreFilter() {
-  const container = document.getElementById("filter-genres");
+function buildTagFilter() {
+  const container = document.getElementById("filter-tags");
 
-  Object.entries(genres).forEach(([key, meta]) => {
+  Object.entries(tags).forEach(([key, meta]) => {
     const label = document.createElement("label");
 
     const checkbox = document.createElement("input");
@@ -209,107 +209,107 @@ function buildGenreFilter() {
 }
 
 // ===============================
-// GENRE DROPDOWN BEHAVIOR
+// TAG DROPDOWN BEHAVIOR
 // ===============================
 
-function initGenreDropdown() {
-  const genreLabel = document.getElementById("genre-label");
+function initTagDropdown() {
+  const tagLabel = document.getElementById("tag-label");
 
-  createGenreModal();
-  genreLabel.addEventListener("click", openGenreModal);
-  updateGenreLabel();
+  createTagModal();
+  tagLabel.addEventListener("click", openTagModal);
+  updateTagLabel();
 }
 
-function updateGenreLabel() {
-  const genreLabel = document.getElementById("genre-label");
+function updateTagLabel() {
+  const tagLabel = document.getElementById("tag-label");
 
-  if (activeGenres.size === 0) {
-    genreLabel.textContent = "Genres";
-  } else if (activeGenres.size === 1) {
-    genreLabel.textContent = [...activeGenres][0];
+  if (activeTags.size === 0) {
+    tagLabel.textContent = "tags";
+  } else if (activeTags.size === 1) {
+    tagLabel.textContent = [...activeTags][0];
   } else {
-    genreLabel.textContent = `${activeGenres.size} genres`;
+    tagLabel.textContent = `${activeTags.size} tags`;
   }
 }
 
 // ===============================
-// GENRE MODAL
+// TAG MODAL
 // ===============================
 
-let genreModal = null;
+let tagModal = null;
 
-function createGenreModal() {
-  if (genreModal) return genreModal;
+function createTagModal() {
+  if (tagModal) return tagModal;
 
   const overlay = document.createElement("div");
-  overlay.className = "genre-modal-overlay";
+  overlay.className = "tag-modal-overlay";
   overlay.innerHTML = `
-    <div class="genre-modal" role="dialog" aria-modal="true" aria-labelledby="genre-modal-title">
-      <div class="genre-modal-header">
-        <div id="genre-modal-title" class="genre-modal-title">Select genres</div>
-        <button class="genre-modal-close" type="button" aria-label="Close">✕</button>
+    <div class="tag-modal" role="dialog" aria-modal="true" aria-labelledby="tag-modal-title">
+      <div class="tag-modal-header">
+        <div id="tag-modal-title" class="tag-modal-title">Select tags</div>
+        <button class="tag-modal-close" type="button" aria-label="Close">✕</button>
       </div>
-      <div class="genre-modal-body"></div>
-      <div class="genre-modal-actions">
-        <button class="genre-modal-btn ghost" type="button">Cancel</button>
-        <button class="genre-modal-btn primary" type="button">OK</button>
+      <div class="tag-modal-body"></div>
+      <div class="tag-modal-actions">
+        <button class="tag-modal-btn ghost" type="button">Cancel</button>
+        <button class="tag-modal-btn primary" type="button">OK</button>
       </div>
     </div>
   `;
 
   document.body.appendChild(overlay);
 
-  const body = overlay.querySelector(".genre-modal-body");
-  const closeBtn = overlay.querySelector(".genre-modal-close");
-  const cancelBtn = overlay.querySelector(".genre-modal-btn.ghost");
-  const okBtn = overlay.querySelector(".genre-modal-btn.primary");
+  const body = overlay.querySelector(".tag-modal-body");
+  const closeBtn = overlay.querySelector(".tag-modal-close");
+  const cancelBtn = overlay.querySelector(".tag-modal-btn.ghost");
+  const okBtn = overlay.querySelector(".tag-modal-btn.primary");
 
-  const list = document.getElementById("filter-genres");
+  const list = document.getElementById("filter-tags");
   body.appendChild(list);
 
   overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) closeGenreModal("cancel");
+    if (e.target === overlay) closeTagModal("cancel");
   });
-  closeBtn.addEventListener("click", () => closeGenreModal("cancel"));
-  cancelBtn.addEventListener("click", () => closeGenreModal("cancel"));
-  okBtn.addEventListener("click", () => closeGenreModal("ok"));
+  closeBtn.addEventListener("click", () => closeTagModal("cancel"));
+  cancelBtn.addEventListener("click", () => closeTagModal("cancel"));
+  okBtn.addEventListener("click", () => closeTagModal("ok"));
 
   document.addEventListener("keydown", (e) => {
     if (overlay.classList.contains("open") && e.key === "Escape") {
-      closeGenreModal("cancel");
+      closeTagModal("cancel");
     }
   });
 
-  genreModal = { overlay, list, prevSelection: new Set() };
-  return genreModal;
+  tagModal = { overlay, list, prevSelection: new Set() };
+  return tagModal;
 }
 
-function openGenreModal() {
-  const modal = createGenreModal();
-  modal.prevSelection = new Set(activeGenres);
-  syncGenreCheckboxes(activeGenres);
+function openTagModal() {
+  const modal = createTagModal();
+  modal.prevSelection = new Set(activeTags);
+  syncTagCheckboxes(activeTags);
   modal.overlay.classList.add("open");
 }
 
-function closeGenreModal(action) {
-  const modal = genreModal;
+function closeTagModal(action) {
+  const modal = tagModal;
   if (!modal) return;
 
   if (action === "ok") {
-    activeGenres = getCheckedGenres();
-    updateGenreLabel();
+    activeTags = getCheckedTags();
+    updateTagLabel();
   } else {
-    syncGenreCheckboxes(modal.prevSelection);
+    syncTagCheckboxes(modal.prevSelection);
   }
 
   modal.overlay.classList.remove("open");
 }
 
-function getCheckedGenres() {
+function getCheckedTags() {
   const selected = new Set();
-  if (!genreModal) return selected;
+  if (!tagModal) return selected;
 
-  genreModal.list
+  tagModal.list
     .querySelectorAll("input[type=\"checkbox\"]")
     .forEach(cb => {
       if (cb.checked) selected.add(cb.value);
@@ -318,10 +318,10 @@ function getCheckedGenres() {
   return selected;
 }
 
-function syncGenreCheckboxes(selectedSet) {
-  if (!genreModal) return;
+function syncTagCheckboxes(selectedSet) {
+  if (!tagModal) return;
 
-  genreModal.list
+  tagModal.list
     .querySelectorAll("input[type=\"checkbox\"]")
     .forEach(cb => {
       cb.checked = selectedSet.has(cb.value);
@@ -343,9 +343,9 @@ function applyFilters() {
     // Country filter
     if (activeCountry && station.country !== activeCountry) return false;
 
-    // Genre filter (OR logic)
-    if (activeGenres.size > 0) {
-      const match = (station.genres || []).some(g => activeGenres.has(g));
+    // Tag filter (OR logic)
+    if (activeTags.size > 0) {
+      const match = (station.tags || []).some(g => activeTags.has(g));
       if (!match) return false;
     }
 
