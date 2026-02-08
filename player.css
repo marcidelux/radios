@@ -85,7 +85,11 @@
 =============================== */
 
 #player {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #0d0d0d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 }
 
 #player-toolbar {

@@ -17,6 +17,7 @@ let favorites = []; // full station objects (exported to player.js)
 // ===============================
 
 let previewStationId = null;
+const pendingAddTimers = new Map();
 
 function dispatchPreviewPlay(station) {
   window.dispatchEvent(new CustomEvent("preview-play", { detail: { station } }));
@@ -46,6 +47,53 @@ function stopPreviewPlayback() {
   previewStationId = null;
   setPreviewRowHighlight(null);
   dispatchPreviewStop();
+}
+
+function getFirstPlayerAnchorTop(sourceRect) {
+  const firstSlideLogo = document.querySelector(
+    "#radio-splide .splide__slide:not(.splide__slide--clone) .station-logo img"
+  );
+  if (firstSlideLogo) {
+    const rect = firstSlideLogo.getBoundingClientRect();
+    return rect.top + (rect.height - sourceRect.height) / 2;
+  }
+
+  const player = document.getElementById("player");
+  if (!player) return sourceRect.top;
+  const playerRect = player.getBoundingClientRect();
+  return playerRect.top + Math.min(56, playerRect.height * 0.28) - sourceRect.height / 2;
+}
+
+function animateLogoTransfer(sourceImg, direction = "to-player") {
+  if (!sourceImg) return;
+
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const sourceRect = sourceImg.getBoundingClientRect();
+  if (!sourceRect.width || !sourceRect.height) return;
+
+  const playerAnchorTop = getFirstPlayerAnchorTop(sourceRect);
+
+  const clone = sourceImg.cloneNode(true);
+  const flyToPlayer = direction === "to-player";
+  clone.classList.add(flyToPlayer ? "logo-fly-to-player" : "logo-fly-from-player");
+  clone.style.left = `${sourceRect.left}px`;
+  clone.style.top = `${flyToPlayer ? sourceRect.top : playerAnchorTop}px`;
+  clone.style.width = `${sourceRect.width}px`;
+  clone.style.height = `${sourceRect.height}px`;
+  clone.style.setProperty("--fly-x", "0px");
+  clone.style.setProperty(
+    "--fly-y",
+    `${flyToPlayer ? playerAnchorTop - sourceRect.top : sourceRect.top - playerAnchorTop}px`
+  );
+
+  document.body.appendChild(clone);
+
+  clone.addEventListener("animationend", () => {
+    clone.remove();
+  }, { once: true });
 }
 
 const STORAGE_KEY = "favoriteStationIds";
@@ -79,7 +127,10 @@ function initFavoritesVisibilityToggle() {
   if (!section || !toggleBtn) return;
 
   const syncLabel = () => {
-    toggleBtn.textContent = section.classList.contains("collapsed") ? "Show" : "Hide";
+    const isCollapsed = section.classList.contains("collapsed");
+    toggleBtn.textContent = "Stations";
+    toggleBtn.setAttribute("aria-expanded", String(!isCollapsed));
+    toggleBtn.title = isCollapsed ? "Show stations" : "Hide stations";
   };
 
   toggleBtn.addEventListener("click", () => {
@@ -88,6 +139,56 @@ function initFavoritesVisibilityToggle() {
   });
 
   syncLabel();
+}
+
+function initScrollResponsiveUi() {
+  const player = document.getElementById("player");
+  const filters = document.getElementById("station-filters");
+  if (!player || !filters) return;
+
+  const root = document.documentElement;
+  const setPlayerHeightVar = () => {
+    root.style.setProperty("--player-height", `${Math.round(player.offsetHeight)}px`);
+  };
+
+  setPlayerHeightVar();
+  window.addEventListener("resize", setPlayerHeightVar);
+
+  if (window.ResizeObserver) {
+    const observer = new ResizeObserver(setPlayerHeightVar);
+    observer.observe(player);
+  }
+
+  let lastY = window.scrollY;
+  let ticking = false;
+  const threshold = 8;
+
+  const updateOnScroll = () => {
+    const currentY = window.scrollY;
+    const delta = currentY - lastY;
+    const nearTop = currentY < 24;
+
+    if (nearTop) {
+      document.body.classList.remove("filters-hidden");
+    } else if (delta > threshold) {
+      document.body.classList.add("filters-hidden");
+    } else if (delta < -threshold) {
+      document.body.classList.remove("filters-hidden");
+    }
+
+    lastY = currentY;
+    ticking = false;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateOnScroll);
+    },
+    { passive: true }
+  );
 }
 
 // ===============================
@@ -117,6 +218,7 @@ async function initFavorites() {
 
   // Build filter UI
   initFavoritesVisibilityToggle();
+  initScrollResponsiveUi();
   initNameFilter();
   buildCountryFilter();
   initCountryFilter();
@@ -583,8 +685,8 @@ function buildTable(stations) {
   table.innerHTML = `
     <thead>
       <tr>
-        <th>Name</th>
         <th>Logo</th>
+        <th>Name</th>
         <th>Favorite</th>
       </tr>
     </thead>
@@ -601,8 +703,8 @@ function buildTable(stations) {
     row.dataset.stationId = station.id;
 
     row.innerHTML = `
-      <td>${countryMeta.flag} ${station.name}</td>
       <td><img src="${station.image}" alt="${station.name}" /></td>
+      <td>${countryMeta.flag} ${station.name}</td>
       <td><input type="checkbox" ${isChecked ? "checked" : ""} /></td>
     `;
 
@@ -639,8 +741,29 @@ function buildTable(stations) {
     }
 
     // IMPORTANT: update storage incrementally (pagination-safe)
-    row.querySelector("input").addEventListener("change", (e) => {
-      onFavoriteToggle(station.id, e.target.checked);
+    const favoriteInput = row.querySelector("input");
+    favoriteInput.addEventListener("change", (e) => {
+      if (e.target.checked && logoImg) {
+        const existingTimer = pendingAddTimers.get(station.id);
+        if (existingTimer) clearTimeout(existingTimer);
+        animateLogoTransfer(logoImg, "to-player");
+        const timerId = window.setTimeout(() => {
+          const insertBeforeStationId = window.__playerCurrentStationId || null;
+          onFavoriteToggle(station.id, true, { insertBeforeStationId });
+          pendingAddTimers.delete(station.id);
+        }, 300);
+        pendingAddTimers.set(station.id, timerId);
+      } else if (!e.target.checked && logoImg) {
+        const existingTimer = pendingAddTimers.get(station.id);
+        if (existingTimer) {
+          clearTimeout(existingTimer);
+          pendingAddTimers.delete(station.id);
+        }
+        animateLogoTransfer(logoImg, "from-player");
+        onFavoriteToggle(station.id, false);
+      } else {
+        onFavoriteToggle(station.id, e.target.checked);
+      }
     });
 
     tbody.appendChild(row);
@@ -653,13 +776,22 @@ function buildTable(stations) {
 // FAVORITES LOGIC (pagination-safe)
 // ===============================
 
-function onFavoriteToggle(stationId, checked) {
-  const ids = new Set(loadFromStorage());
+function onFavoriteToggle(stationId, checked, options = {}) {
+  const ids = loadFromStorage();
+  const existingIndex = ids.indexOf(stationId);
 
-  if (checked) ids.add(stationId);
-  else ids.delete(stationId);
+  if (checked) {
+    if (existingIndex === -1) {
+      const insertBeforeStationId = options.insertBeforeStationId || null;
+      const insertBeforeIndex = insertBeforeStationId ? ids.indexOf(insertBeforeStationId) : -1;
+      if (insertBeforeIndex >= 0) ids.splice(insertBeforeIndex, 0, stationId);
+      else ids.push(stationId);
+    }
+  } else if (existingIndex >= 0) {
+    ids.splice(existingIndex, 1);
+  }
 
-  saveToStorage([...ids]);
+  saveToStorage(ids);
 
   rebuildFavoritesFromStorageAndNotify(true);
 }

@@ -15,6 +15,11 @@ let audioUnlocked = false;
 let isPreviewing = false;
 let previewStation = null;
 
+function publishCurrentStationId() {
+  const current = splide ? stations[splide.index] : null;
+  window.__playerCurrentStationId = current ? current.id : null;
+}
+
 // ===============================
 // INIT
 // ===============================
@@ -97,7 +102,7 @@ initMediaSession();
 // CAROUSEL BUILD/REBUILD
 // ===============================
 
-function buildCarousel() {
+function buildCarousel(startIndex = 0) {
   console.log("[PLAYER] Building carousel with stations:", stations.length);
 
   // Render slides
@@ -129,9 +134,11 @@ function buildCarousel() {
   });
 
   // Create Splide
+  const normalizedStart = Math.max(0, Math.min(startIndex, Math.max(0, stations.length - 1)));
   splide = new Splide("#radio-splide", {
     type: "loop",
     focus: "center",
+    start: normalizedStart,
     perPage: 3,
     gap: "2rem",
     pagination: false,
@@ -140,10 +147,12 @@ function buildCarousel() {
   });
 
   splide.mount();
+  publishCurrentStationId();
 
   // Moved handler
   splide.on("moved", (index) => {
     console.log("[PLAYER] Slide moved → index:", index);
+    publishCurrentStationId();
 
     if (audioUnlocked) {
       playStation(index);
@@ -402,36 +411,37 @@ function updateStations(newStations) {
     console.warn("[PLAYER] No favorites left → stopping player + clearing UI");
     stopPlayback();
     stations = [];
+    window.__playerCurrentStationId = null;
     destroyCarousel();
     return;
   }
 
-  // Preserve currently “selected” station by name if possible
+  // Preserve currently selected station by id if possible.
   const currentIndex = splide ? splide.index : 0;
   const currentStation = stations[currentIndex];
-  const stillExists =
-    currentStation && newStations.some(s => s.name === currentStation.name);
+  const currentStationId = currentStation ? currentStation.id : null;
+  const restoredIndex =
+    currentStationId ? newStations.findIndex(s => s.id === currentStationId) : -1;
+  const stillExists = restoredIndex >= 0;
 
   stations = newStations;
 
-  // Rebuild the whole carousel safely
+  // Rebuild directly at the restored index to avoid visible re-swipe.
   destroyCarousel();
-  buildCarousel();
+  buildCarousel(stillExists ? restoredIndex : 0);
 
-  // If we had a current station and it still exists, snap to it
+  // If we had a current station and it still exists, keep playback aligned.
   if (stillExists) {
-    const newIndex = stations.findIndex(s => s.name === currentStation.name);
-    console.log("[PLAYER] Restoring current station to index:", newIndex);
-
-    // In loop mode, go() is safe after mount
-    splide.go(newIndex);
+    console.log("[PLAYER] Restoring current station to index:", restoredIndex);
+    publishCurrentStationId();
 
     // If we were playing, keep playing (after user unlocked audio)
     if (audioUnlocked && isPlaying) {
-      playStation(newIndex);
+      playStation(restoredIndex);
     }
   } else {
     console.warn("[PLAYER] Current station removed → stopping");
+    publishCurrentStationId();
     stopPlayback();
   }
 }
